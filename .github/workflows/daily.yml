@@ -1,0 +1,45 @@
+# Daily pipeline: fetch -> analyze -> card -> commit.
+# Two runs per day (both times IST, cron is UTC):
+#   04:00 UTC = 09:30 IST  — morning trade (per original spec)
+#   10:00 UTC = 15:30 IST  — Loop 0 finding: the upstream index kept filling
+#                            until at least 13:30 IST, so a second run catches
+#                            the full day. Dedupe makes double-runs safe.
+# Failures stay loud: any step failing marks the run red — no catch-alls.
+# NOTE: Sundays/market holidays legitimately return zero records -> red run.
+#       That is the designed behavior (docs/api-contract.md, freshness §3).
+name: Daily mandi pull
+on:
+  schedule:
+    - cron: "0 4 * * *"
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mandi-pipeline
+  cancel-in-progress: false
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Fetch mandi prices
+        run: python fetch_mandi.py
+        env:
+          DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+      - name: Analyze
+        run: python analyze.py
+      - name: Render card
+        run: python make_card.py
+      - name: Commit data + reports
+        run: |
+          git config user.name "mandi-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/ reports/
+          git commit -m "Daily report $(date -u +%F)" || echo "no changes"
+          git pull --rebase origin main
+          git push
