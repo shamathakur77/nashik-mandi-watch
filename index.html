@@ -5,209 +5,304 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>नाशिक मंडी भाव · Nashik Mandi Watch</title>
 <meta name="description" content="रोजचे नाशिक जिल्हा कांदा बाजारभाव · Daily Nashik district onion mandi prices from AGMARKNET via data.gov.in">
+<meta name="theme-color" content="#fcfcfb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="नाशिक मंडी भाव · Nashik Mandi Watch">
+<meta property="og:description" content="आजचे कांदा बाजारभाव, रोज सकाळी · Today's onion mandi prices, every morning. Free & open.">
+<meta property="og:image" content="https://raw.githubusercontent.com/shamathakur77/nashik-mandi-watch/main/reports/latest-card.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
   :root {
     color-scheme: light;
-    --surface: #fcfcfb;
-    --plane: #f9f9f7;
-    --ink: #0b0b0b;
-    --ink2: #52514e;
-    --muted: #898781;
-    --hair: #e1e0d9;
-    --baseline-axis: #c3c2b7;
-    --up: #006300;
-    --down: #d03b3b;
-    --accent: #2a78d6;      /* series 1 */
-    --s2: #eb6834;          /* series 2 */
-    --s3: #1baf7a;          /* series 3 */
-    --chip-baseline: #1c5cab;
-    --chip-baseline-bg: #cde2fb;
-    --ring: rgba(11,11,11,.10);
+    --surface: #fcfcfb; --plane: #f9f9f7;
+    --ink: #0b0b0b; --ink2: #52514e; --muted: #898781;
+    --hair: #e1e0d9; --axis: #c3c2b7;
+    --up: #006300; --down: #d03b3b;
+    --accent: #2a78d6; --s2: #eb6834; --s3: #1baf7a;
+    --base-c: #1c5cab; --base-bg: #cde2fb;
+    --ring: rgba(11,11,11,.08);
+    --shadow: 0 1px 2px rgba(11,11,11,.04), 0 8px 24px -12px rgba(11,11,11,.10);
+    --wa: #128c4b;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       color-scheme: dark;
-      --surface: #1a1a19;
-      --plane: #0d0d0d;
-      --ink: #ffffff;
-      --ink2: #c3c2b7;
-      --muted: #898781;
-      --hair: #2c2c2a;
-      --baseline-axis: #383835;
-      --up: #0ca30c;
-      --down: #e66767;
-      --accent: #3987e5;
-      --s2: #d95926;
-      --s3: #199e70;
-      --chip-baseline: #86b6ef;
-      --chip-baseline-bg: #10284a;
-      --ring: rgba(255,255,255,.10);
+      --surface: #1a1a19; --plane: #0d0d0d;
+      --ink: #ffffff; --ink2: #c3c2b7; --muted: #898781;
+      --hair: #2c2c2a; --axis: #383835;
+      --up: #0ca30c; --down: #e66767;
+      --accent: #3987e5; --s2: #d95926; --s3: #199e70;
+      --base-c: #86b6ef; --base-bg: #10284a;
+      --ring: rgba(255,255,255,.09);
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+      --wa: #25d366;
     }
   }
   * { box-sizing: border-box; margin: 0; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
   body {
-    background: var(--plane);
-    color: var(--ink);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Devanagari", sans-serif;
-    line-height: 1.45;
+    background: var(--plane); color: var(--ink);
+    font-family: "Mukta", system-ui, -apple-system, "Segoe UI", "Noto Sans", "Noto Sans Devanagari", sans-serif;
+    line-height: 1.5; font-size: 16px;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 64px; }
+  a { color: var(--ink2); text-underline-offset: 3px; }
+  :focus-visible { outline: 2.5px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 72px; }
 
+  /* ---------- language switching ---------- */
+  .t-mr, .t-en { display: inline; }
+  body.lang-mr .t-en { display: none !important; }
+  body.lang-en .t-mr { display: none !important; }
+  body.lang-bi .t-en.dot::before { content: " · "; color: var(--muted); font-weight: 400; }
+  body.lang-en .only-bi-hide { display: none; }
+
+  /* ---------- header ---------- */
   header.site {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 12px; padding: 22px 0 14px; flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 20px 0 6px; flex-wrap: wrap;
   }
-  .brand { font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--muted); text-transform: uppercase; }
-  .brand b { color: var(--ink); }
-  #dateline { font-size: 14px; color: var(--ink2); }
+  .brand { font-weight: 800; letter-spacing: .1em; font-size: 13px; color: var(--muted); text-transform: uppercase; }
+  .brand b { color: var(--ink); font-size: 15px; letter-spacing: .02em; }
+  .lang-toggle {
+    display: inline-flex; background: var(--surface); border: 1px solid var(--ring);
+    border-radius: 999px; padding: 3px; gap: 2px; box-shadow: var(--shadow);
+  }
+  .lang-toggle button {
+    border: 0; background: transparent; color: var(--ink2); font: inherit; font-size: 13.5px;
+    font-weight: 600; padding: 5px 14px; border-radius: 999px; cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .lang-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--plane); }
+  .meta-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 4px 0 10px; font-size: 14px; color: var(--ink2); }
+  .fresh { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 13px; }
+  .fresh .d { width: 8px; height: 8px; border-radius: 50%; background: var(--up); }
+  .fresh.stale .d { background: var(--s2); }
+  .fresh.stale { color: var(--s2); }
+  .fresh:not(.stale) { color: var(--up); }
 
+  /* ---------- photo band (optional: assets/hero-photo.jpg; removes itself if absent) ---------- */
+  .photo-band { position: relative; border-radius: 20px; overflow: hidden; margin: 10px 0 0; box-shadow: var(--shadow); }
+  .photo-band img { display: block; width: 100%; height: 150px; object-fit: cover; }
+  @media (max-width: 560px) { .photo-band img { height: 110px; } }
+  .photo-band .credit {
+    position: absolute; right: 10px; bottom: 8px; font-size: 10.5px; color: #fff;
+    background: rgba(0,0,0,.45); padding: 2px 8px; border-radius: 999px; text-decoration: none;
+  }
+  .photo-band::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.18));
+    pointer-events: none;
+  }
+
+  /* ---------- cards ---------- */
   .card {
-    background: var(--surface);
-    border: 1px solid var(--ring);
-    border-radius: 16px;
-    padding: 24px;
-    margin: 14px 0;
+    background: var(--surface); border: 1px solid var(--ring); border-radius: 20px;
+    padding: 26px; margin: 16px 0; box-shadow: var(--shadow);
   }
+  h2 { font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
+  .sub { color: var(--muted); font-size: 13px; margin: 2px 0 16px; }
 
-  /* hero */
-  .hero-kicker { font-size: 15px; color: var(--ink2); margin-bottom: 2px; }
-  .hero-title { font-size: clamp(26px, 6vw, 34px); font-weight: 700; letter-spacing: -.01em; }
-  .hero-price-row { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; margin: 10px 0 4px; }
-  .hero-price { font-size: clamp(56px, 15vw, 92px); font-weight: 700; letter-spacing: -.02em; line-height: 1; }
-  .hero-unit { color: var(--ink2); font-size: 15px; line-height: 1.35; padding-bottom: 10px; }
-  .delta { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20px; }
-  .delta .sub { font-weight: 400; color: var(--ink2); font-size: 14px; }
+  /* ---------- hero ---------- */
+  #hero { padding: 30px 26px; }
+  .hero-kicker { font-size: 14.5px; color: var(--ink2); }
+  .hero-title { font-size: clamp(28px, 6vw, 38px); font-weight: 800; letter-spacing: -.015em; line-height: 1.15; }
+  .hero-price-row { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin: 8px 0 2px; }
+  .hero-price { font-size: clamp(64px, 16vw, 104px); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+  .hero-unit { color: var(--ink2); font-size: 15px; line-height: 1.4; padding-bottom: 12px; }
+  .delta { display: inline-flex; align-items: center; gap: 9px; font-weight: 800; font-size: 22px; margin-top: 10px; }
+  .delta .sub2 { font-weight: 500; color: var(--ink2); font-size: 14px; }
   .tri { width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; }
-  .tri.up   { border-bottom: 14px solid var(--up); }
-  .tri.down { border-top:    14px solid var(--down); }
-  .delta.up   { color: var(--up); }
-  .delta.down { color: var(--down); }
+  .tri.up { border-bottom: 14px solid var(--up); } .tri.down { border-top: 14px solid var(--down); }
+  .delta.up { color: var(--up); } .delta.down { color: var(--down); }
   .baseline-note {
-    border: 2px solid var(--chip-baseline); color: var(--chip-baseline);
-    border-radius: 12px; padding: 12px 16px; margin-top: 12px; font-weight: 600;
+    border: 2px solid var(--base-c); color: var(--base-c); background: color-mix(in srgb, var(--base-bg) 40%, var(--surface));
+    border-radius: 14px; padding: 13px 17px; margin-top: 14px; font-weight: 700; font-size: 15.5px;
   }
-  .baseline-note small { display: block; font-weight: 400; color: var(--ink2); margin-top: 2px; }
-  .range { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .baseline-note small { display: block; font-weight: 500; color: var(--ink2); margin-top: 2px; font-size: 13.5px; }
+  .range { color: var(--muted); font-size: 14px; margin-top: 14px; }
+  .hero-actions { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; border-radius: 12px; padding: 10px 18px;
+    font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; text-decoration: none;
+    border: 1px solid var(--ring); background: var(--surface); color: var(--ink);
+    transition: transform .12s, box-shadow .12s; box-shadow: var(--shadow);
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn.wa { background: var(--wa); border-color: transparent; color: #fff; }
 
-  h2 { font-size: 17px; margin: 0 0 4px; }
-  h2 + .sub { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+  /* ---------- sticky bar ---------- */
+  #sticky {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+    background: color-mix(in srgb, var(--surface) 88%, transparent);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--ring);
+    transform: translateY(-110%); transition: transform .22s ease;
+  }
+  #sticky.on { transform: translateY(0); }
+  #sticky .in { max-width: 820px; margin: 0 auto; padding: 9px 20px; display: flex; align-items: center; gap: 12px; }
+  #sticky .p { font-weight: 800; font-size: 19px; }
+  #sticky .m { color: var(--ink2); font-size: 14px; font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #sticky .chip { flex: 0 0 auto; }
+  #sticky a.mini {
+    flex: 0 0 auto; display: inline-flex; width: 34px; height: 34px; border-radius: 50%;
+    align-items: center; justify-content: center; background: var(--wa); color: #fff;
+  }
 
-  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  /* ---------- tables ---------- */
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
   th {
-    text-align: left; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
-    color: var(--muted); font-weight: 600; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--hair);
+    text-align: left; font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--muted); font-weight: 700; padding: 8px 8px 9px 0; border-bottom: 1px solid var(--hair);
     cursor: pointer; user-select: none; white-space: nowrap;
   }
+  th .arr { opacity: 0; font-size: 10px; } th.sorted .arr { opacity: 1; }
   th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 0; padding-left: 8px; }
-  td { padding: 10px 8px 10px 0; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  td { padding: 11px 8px 11px 0; border-bottom: 1px solid var(--hair); vertical-align: middle; }
+  tbody tr { transition: background .12s; }
+  tbody tr:hover { background: color-mix(in srgb, var(--ink) 3%, transparent); }
   tr:last-child td { border-bottom: none; }
-  td .mr { display: block; font-weight: 600; }
-  td .en { display: block; color: var(--muted); font-size: 12.5px; }
-  td.num b { font-weight: 700; }
+  td .mr { display: block; font-weight: 700; line-height: 1.3; }
+  td .en2 { display: block; color: var(--muted); font-size: 12px; }
+  body.lang-mr td .en2 { display: none; }
+  td.num b { font-weight: 800; }
+  .spark { display: block; margin-top: 2px; margin-left: auto; }
   .chip {
-    display: inline-block; font-size: 11.5px; font-weight: 700; border-radius: 999px;
-    padding: 2px 9px; white-space: nowrap;
+    display: inline-block; font-size: 11.5px; font-weight: 800; border-radius: 999px;
+    padding: 2.5px 10px; white-space: nowrap; letter-spacing: .01em;
   }
-  .chip.up   { color: var(--up);   background: color-mix(in srgb, var(--up) 12%, var(--surface)); }
-  .chip.down { color: var(--down); background: color-mix(in srgb, var(--down) 12%, var(--surface)); }
-  .chip.base { color: var(--chip-baseline); background: var(--chip-baseline-bg); }
-  .chip.steady { color: var(--ink2); background: color-mix(in srgb, var(--ink2) 10%, var(--surface)); }
-
-  details { margin-top: 6px; }
-  details > summary {
-    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
-    font-weight: 700; font-size: 16px; padding: 16px 0;
-  }
-  details > summary::-webkit-details-marker { display: none; }
-  .caret { transition: transform .15s; color: var(--muted); }
-  details[open] .caret { transform: rotate(90deg); }
-  summary .sub2 { font-weight: 400; color: var(--muted); font-size: 13px; }
-
-  /* chart */
-  .chart-box { position: relative; }
-  svg text { font-family: inherit; }
-  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 6px 0 4px; font-size: 13px; color: var(--ink2); }
-  .legend .key { display: inline-flex; align-items: center; gap: 7px; }
-  .legend .swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
-  .tooltip {
-    position: absolute; pointer-events: none; background: var(--surface);
-    border: 1px solid var(--ring); border-radius: 10px; padding: 8px 12px;
-    font-size: 12.5px; box-shadow: 0 4px 14px rgba(0,0,0,.10); display: none; z-index: 5;
-    white-space: nowrap;
-  }
-  .tooltip b { display: block; margin-bottom: 2px; }
-  .placeholder {
-    border: 1.5px dashed var(--hair); border-radius: 12px; padding: 26px 20px;
-    color: var(--muted); font-size: 14px; text-align: center;
-  }
-
-  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  @media (max-width: 560px) { .split { grid-template-columns: 1fr; } }
-  .stat { border: 1px solid var(--hair); border-radius: 12px; padding: 14px 16px; }
-  .stat .lbl { font-size: 12.5px; color: var(--muted); }
-  .stat .val { font-size: 26px; font-weight: 700; font-variant-numeric: normal; }
-  .stat .cmp { font-size: 12.5px; color: var(--ink2); }
-
-  @media (max-width: 480px) {
+  .chip.up { color: var(--up); background: color-mix(in srgb, var(--up) 13%, var(--surface)); }
+  .chip.down { color: var(--down); background: color-mix(in srgb, var(--down) 13%, var(--surface)); }
+  .chip.base { color: var(--base-c); background: var(--base-bg); }
+  .chip.steady { color: var(--ink2); background: color-mix(in srgb, var(--ink2) 11%, var(--surface)); }
+  @media (max-width: 500px) {
     #onion-table th:nth-child(2), #onion-table td:nth-child(2),
     #onion-table th:nth-child(4), #onion-table td:nth-child(4) { display: none; }
   }
-  footer { color: var(--muted); font-size: 12.5px; margin-top: 28px; line-height: 1.7; }
-  footer a { color: var(--ink2); }
-  .status-line { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+
+  /* ---------- analyst ---------- */
+  details { margin-top: 10px; }
+  details > summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
+    font-weight: 800; font-size: 17px; padding: 14px 4px;
+    border-radius: 12px; transition: background .15s;
+  }
+  details > summary:hover { background: color-mix(in srgb, var(--ink) 4%, transparent); }
+  details > summary::-webkit-details-marker { display: none; }
+  .caret { transition: transform .18s; color: var(--muted); flex: 0 0 auto; }
+  details[open] .caret { transform: rotate(90deg); }
+  summary .sub2 { font-weight: 500; color: var(--muted); font-size: 13px; }
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 4px 0 6px; font-size: 13.5px; color: var(--ink2); font-weight: 600; }
+  .legend .key { display: inline-flex; align-items: center; gap: 7px; }
+  .legend .swatch { width: 16px; height: 3px; border-radius: 2px; }
+  .chart-box { position: relative; }
+  svg text { font-family: inherit; }
+  .tooltip {
+    position: absolute; pointer-events: none; background: var(--surface);
+    border: 1px solid var(--ring); border-radius: 12px; padding: 9px 13px;
+    font-size: 13px; box-shadow: var(--shadow); display: none; z-index: 5; white-space: nowrap; line-height: 1.55;
+  }
+  .tooltip b { display: block; margin-bottom: 3px; }
+  .placeholder {
+    border: 1.5px dashed var(--hair); border-radius: 14px; padding: 30px 20px;
+    color: var(--muted); font-size: 14.5px; text-align: center; line-height: 1.7;
+  }
+  .placeholder .t-en { display: block; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .split { grid-template-columns: 1fr; } }
+  .stat { border: 1px solid var(--hair); border-radius: 14px; padding: 15px 17px; }
+  .stat .lbl { font-size: 12.5px; color: var(--muted); font-weight: 600; }
+  .stat .val { font-size: 28px; font-weight: 800; }
+  .stat .cmp { font-size: 13px; color: var(--ink2); }
+
+  /* ---------- skeleton ---------- */
+  .skel { border-radius: 10px; background: linear-gradient(100deg, var(--hair) 40%, color-mix(in srgb, var(--hair) 40%, var(--surface)) 50%, var(--hair) 60%); background-size: 200% 100%; animation: sh 1.2s infinite linear; }
+  @keyframes sh { to { background-position: -200% 0; } }
+
+  footer { color: var(--muted); font-size: 12.5px; margin-top: 30px; line-height: 1.8; }
   .err {
     background: color-mix(in srgb, var(--down) 8%, var(--surface));
-    border: 1px solid var(--down); color: var(--ink);
-    border-radius: 12px; padding: 14px 16px; font-size: 14px; margin: 14px 0;
+    border: 1px solid var(--down); border-radius: 14px; padding: 15px 17px; font-size: 14.5px; margin: 14px 0;
   }
 </style>
 </head>
-<body>
+<body class="lang-bi">
+<div id="sticky" aria-hidden="true"><div class="in">
+  <span class="p" id="st-price"></span><span class="m" id="st-mkt"></span>
+  <span id="st-chip"></span>
+  <a class="mini" id="st-wa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.5-.2.8-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3z"/></svg></a>
+</div></div>
+
 <div class="wrap">
   <header class="site">
-    <div class="brand"><b>नाशिक मंडी भाव</b> · NASHIK MANDI WATCH</div>
-    <div id="dateline">—</div>
+    <div class="brand"><b class="t-mr">नाशिक मंडी भाव</b><b class="t-en dot">NASHIK MANDI WATCH</b></div>
+    <div class="lang-toggle" role="group" aria-label="Language / भाषा">
+      <button id="lb-mr" aria-pressed="false">मराठी</button>
+      <button id="lb-bi" aria-pressed="true">दोन्ही</button>
+      <button id="lb-en" aria-pressed="false">English</button>
+    </div>
   </header>
+  <div class="meta-row">
+    <span id="dateline"><span class="skel" style="display:inline-block;width:150px;height:14px"></span></span>
+    <span class="fresh" id="fresh" style="display:none"><span class="d"></span><span id="fresh-t"></span></span>
+  </div>
+
+  <div class="photo-band" id="photo-band">
+    <img src="assets/hero-photo.jpg" alt="कांदा बाजार, नाशिक जिल्हा · Onion market, Nashik district"
+         loading="lazy" onerror="document.getElementById('photo-band').remove()">
+    <a class="credit" id="photo-credit" href="#" target="_blank" rel="noopener" style="display:none"></a>
+  </div>
 
   <div id="error" class="err" style="display:none"></div>
 
   <!-- FARMER LAYER -->
-  <section class="card" id="hero" style="display:none">
-    <div class="hero-kicker" id="hero-kicker">कांदा · Onion · modal price</div>
-    <div class="hero-title" id="hero-title">—</div>
+  <section class="card" id="hero">
+    <div class="hero-kicker" id="hero-kicker"><span class="skel" style="display:inline-block;width:220px;height:14px"></span></div>
+    <div class="hero-title" id="hero-title"></div>
     <div class="hero-price-row">
-      <div class="hero-price" id="hero-price">—</div>
-      <div class="hero-unit">प्रति क्विंटल<br>per quintal</div>
+      <div class="hero-price" id="hero-price"><span class="skel" style="display:inline-block;width:260px;height:72px"></span></div>
+      <div class="hero-unit"><span class="t-mr">प्रति क्विंटल</span><br class="only-bi-hide"><span class="t-en">per quintal</span></div>
     </div>
     <div id="hero-delta"></div>
     <div class="range" id="hero-range"></div>
+    <div class="hero-actions" id="hero-actions" style="display:none">
+      <a class="btn wa" id="wa-btn" href="#" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.3 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.5-.2.8-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3z"/></svg>
+        <span class="t-mr">व्हॉट्सॲपवर पाठवा</span><span class="t-en dot">Share</span></a>
+      <a class="btn" href="reports/latest-card.png" download>
+        <span class="t-mr">कार्ड जतन करा</span><span class="t-en dot">Save card</span></a>
+    </div>
   </section>
 
   <section class="card" id="markets-card" style="display:none">
-    <h2>आजचे कांदा भाव — सर्व बाजार</h2>
-    <div class="sub">Today's onion prices · every reporting Nashik market · tap headers to sort</div>
+    <h2><span class="t-mr">आजचे कांदा भाव — सर्व बाजार</span><span class="t-en dot">Today's onion prices — every market</span></h2>
+    <div class="sub"><span class="t-mr">रकान्यावर क्लिक करून क्रम बदला</span><span class="t-en dot">tap a column header to sort</span></div>
     <table id="onion-table" aria-label="Onion prices by market">
       <thead><tr>
-        <th data-k="market">बाजार · Market</th>
-        <th class="num" data-k="min">किमान<br>min</th>
-        <th class="num" data-k="modal">मोडल<br>modal</th>
-        <th class="num" data-k="max">कमाल<br>max</th>
-        <th class="num" data-k="pct">कल<br>trend</th>
+        <th data-k="market"><span class="t-mr">बाजार</span><span class="t-en dot">market</span> <span class="arr">▾</span></th>
+        <th class="num" data-k="min"><span class="t-mr">किमान</span><span class="t-en dot">min</span> <span class="arr">▾</span></th>
+        <th class="num sorted" data-k="modal"><span class="t-mr">मोडल</span><span class="t-en dot">modal</span> <span class="arr">▾</span></th>
+        <th class="num" data-k="max"><span class="t-mr">कमाल</span><span class="t-en dot">max</span> <span class="arr">▾</span></th>
+        <th class="num" data-k="pct"><span class="t-mr">कल</span><span class="t-en dot">trend</span> <span class="arr">▾</span></th>
       </tr></thead>
       <tbody></tbody>
     </table>
   </section>
 
   <section class="card" id="others-card" style="display:none">
-    <h2>इतर भाव</h2>
-    <div class="sub">Other commodities today (₹/quintal)</div>
+    <h2><span class="t-mr">इतर भाव</span><span class="t-en dot">Other commodities</span></h2>
+    <div class="sub"><span class="t-mr">आज · ₹ प्रति क्विंटल</span><span class="t-en dot">today, ₹/quintal</span></div>
     <table id="others-table" aria-label="Other commodity prices">
       <thead><tr>
-        <th data-k="name">शेतमाल · Commodity</th>
-        <th data-k="market">बाजार · Market</th>
-        <th class="num" data-k="modal">मोडल · modal</th>
+        <th><span class="t-mr">शेतमाल</span><span class="t-en dot">commodity</span></th>
+        <th><span class="t-mr">बाजार</span><span class="t-en dot">market</span></th>
+        <th class="num"><span class="t-mr">मोडल</span><span class="t-en dot">modal</span></th>
       </tr></thead>
       <tbody></tbody>
     </table>
@@ -217,37 +312,37 @@
   <details id="analyst">
     <summary>
       <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M4 2 L10 7 L4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      सखोल विश्लेषण · Analyst view
-      <span class="sub2">trends · movers · Maharashtra comparison</span>
+      <span class="t-mr">सखोल विश्लेषण</span><span class="t-en dot">Analyst view</span>
+      <span class="sub2">trends · movers · MH comparison</span>
     </summary>
 
     <section class="card">
-      <h2>कांदा कल — Lasalgaon yards</h2>
-      <div class="sub">Modal ₹/quintal over trading days · <span id="chart-days">—</span></div>
+      <h2><span class="t-mr">कांदा कल — लासलगाव</span><span class="t-en dot">Onion trend — Lasalgaon yards</span></h2>
+      <div class="sub">Modal ₹/quintal · <span id="chart-days">—</span></div>
       <div class="legend" id="chart-legend"></div>
       <div class="chart-box" id="chart-box"></div>
     </section>
 
     <section class="card" id="movers-card">
-      <h2>आजचे मोठे बदल · Top movers</h2>
-      <div class="sub">All Nashik commodities vs previous trading day</div>
+      <h2><span class="t-mr">आजचे मोठे बदल</span><span class="t-en dot">Top movers</span></h2>
+      <div class="sub"><span class="t-mr">सर्व शेतमाल, कालच्या तुलनेत</span><span class="t-en dot">all Nashik commodities vs previous trading day</span></div>
       <div id="movers-body"></div>
     </section>
 
     <section class="card">
-      <h2>नाशिक vs महाराष्ट्र</h2>
-      <div class="sub">Onion modal price, median across reporting markets today</div>
+      <h2><span class="t-mr">नाशिक vs महाराष्ट्र</span><span class="t-en dot">Nashik vs Maharashtra</span></h2>
+      <div class="sub"><span class="t-mr">कांदा मोडल भाव — आजची मध्यक</span><span class="t-en dot">onion modal price, median across markets today</span></div>
       <div class="split" id="mh-split"></div>
     </section>
   </details>
 
   <footer>
     Source: <b>AGMARKNET via data.gov.in</b> · updated twice daily (09:30 &amp; 15:30 IST) ·
-    <a href="https://github.com/shamathakur77/nashik-mandi-watch">github.com/shamathakur77/nashik-mandi-watch</a><br>
-    Shareable daily card: <a href="reports/latest-card.png">latest-card.png</a> ·
-    Data contract: <a href="reports/latest.json">latest.json</a><br>
+    <a href="https://github.com/shamathakur77/nashik-mandi-watch">open source</a><br>
+    <span class="t-mr">रोजचे कार्ड</span><span class="t-en dot">daily card</span>: <a href="reports/latest-card.png">latest-card.png</a> ·
+    data: <a href="reports/latest.json">latest.json</a><br>
     Built by <a href="https://www.linkedin.com/in/shama-t-b7250632">Shama Thakur</a> — data, done kindly.
-    <div class="status-line" id="gen-line"></div>
+    <div id="gen-line"></div>
   </footer>
 </div>
 
@@ -257,15 +352,17 @@ const $ = s => document.querySelector(s);
 const fmt = n => "₹" + Math.round(n).toLocaleString("en-IN");
 const MR_MONTHS = ["जानेवारी","फेब्रुवारी","मार्च","एप्रिल","मे","जून","जुलै","ऑगस्ट","सप्टेंबर","ऑक्टोबर","नोव्हेंबर","डिसेंबर"];
 const EN_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const bi = (mr, en) => `<span class="t-mr">${mr}</span><span class="t-en dot">${en}</span>`;
 const COMMODITY_MR = {
   "Onion":"कांदा","Tomato":"टोमॅटो","Wheat":"गहू","Maize":"मका",
   "Bajra(Pearl Millet/Cumbu)":"बाजरी","Jowar(Sorghum)":"ज्वारी","Pomegranate":"डाळिंब",
   "Cabbage":"कोबी","Cauliflower":"फ्लॉवर","Banana":"केळी","Grapes":"द्राक्षे","Guava":"पेरू",
   "Apple":"सफरचंद","Papaya":"पपई","Tender Coconut":"शहाळे","Cucumbar(Kheera)":"काकडी",
-  "Green Chilli":"हिरवी मिरची","Rice":"तांदूळ","Potato":"बटाटा","Garlic":"लसूण","Soybean":"सोयाबीन",
-  "Bhindi":"भेंडी","Bhindi(Ladies Finger)":"भेंडी","Bitter gourd":"कारले","Bottle gourd":"दुधी भोपळा",
-  "Brinjal":"वांगी","Chilly Capsicum":"शिमला मिरची","Guar":"गवार","Lime":"लिंबू","Mousambi":"मोसंबी","Mousambi(Sweet Lime)":"मोसंबी","Soyabean":"सोयाबीन",
-  "Orange":"संत्री","Ridgeguard(Tori)":"दोडका","Ridgeguard":"दोडका","Sweet Pumpkin":"लाल भोपळा",
+  "Green Chilli":"हिरवी मिरची","Rice":"तांदूळ","Potato":"बटाटा","Garlic":"लसूण",
+  "Soybean":"सोयाबीन","Soyabean":"सोयाबीन","Bhindi":"भेंडी","Bhindi(Ladies Finger)":"भेंडी",
+  "Bitter gourd":"कारले","Bottle gourd":"दुधी भोपळा","Brinjal":"वांगी","Chilly Capsicum":"शिमला मिरची",
+  "Guar":"गवार","Lime":"लिंबू","Mousambi":"मोसंबी","Mousambi(Sweet Lime)":"मोसंबी","Orange":"संत्री",
+  "Ridgeguard(Tori)":"दोडका","Ridgeguard":"दोडका","Sweet Pumpkin":"लाल भोपळा",
   "Long Melon(Kakri)":"वाळूक","Long Melon":"वाळूक","Drumstick":"शेवगा","Methi(Leaves)":"मेथी",
   "Coriander(Leaves)":"कोथिंबीर","Spinach":"पालक","Ginger(Green)":"आले","Ginger":"आले",
   "Green Peas":"मटार","French Beans (Frasbean)":"फरसबी","Water Melon":"कलिंगड","Jack Fruit":"फणस",
@@ -273,7 +370,9 @@ const COMMODITY_MR = {
   "Carrot":"गाजर","Turmeric":"हळद","Gram Raw(Chholia)":"हरभरा","Bengal Gram(Gram)(Whole)":"हरभरा"
 };
 const comEn = c => c.split("(")[0].trim();
-const comBi = c => (COMMODITY_MR[c] ? COMMODITY_MR[c] + " · " : "") + comEn(c);
+const comCell = c => COMMODITY_MR[c]
+  ? `<span class="t-mr">${COMMODITY_MR[c]}</span><span class="t-en dot">${comEn(c)}</span>`
+  : comEn(c);
 const MKT_ALIAS = {
   "AGRICULTURE PRODUCE MARKET COMITEE CHANDWAD": "Chandwad",
   "Perfect Krishi Market Yard Pvt Ltd, Dist Nashik": "Perfect Krishi (pvt)",
@@ -282,18 +381,28 @@ const MKT_ALIAS = {
 const shortMkt = m => MKT_ALIAS[m] || m.replace(" APMC","");
 const dateBi = iso => {
   const [y,m,d] = iso.split("-").map(Number);
-  return `${d} ${MR_MONTHS[m-1]} · ${d} ${EN_MONTHS[m-1]} ${y}`;
+  return bi(`${d} ${MR_MONTHS[m-1]} ${y}`, `${d} ${EN_MONTHS[m-1]} ${y}`);
+};
+const dateOne = (iso, lang) => {
+  const [y,m,d] = iso.split("-").map(Number);
+  return lang === "mr" ? `${d} ${MR_MONTHS[m-1]}` : `${d} ${EN_MONTHS[m-1]} ${y}`;
 };
 
-/* CSV parser that survives quoted fields (market names contain commas) */
+/* language toggle — persists where storage is available, fails silently where not */
+function setLang(mode) {
+  document.body.className = "lang-" + mode;
+  ["mr","bi","en"].forEach(m => $("#lb-"+m).setAttribute("aria-pressed", String(m === mode)));
+  try { localStorage.setItem("nmw-lang", mode); } catch (e) {}
+}
+["mr","bi","en"].forEach(m => $("#lb-"+m).addEventListener("click", () => setLang(m)));
+try { const saved = localStorage.getItem("nmw-lang"); if (saved) setLang(saved); } catch (e) {}
+
 function parseCSV(text) {
   const rows = []; let row = [], cell = "", q = false;
   for (let i = 0; i < text.length; i++) {
     const ch = text[i];
-    if (q) {
-      if (ch === '"') { if (text[i+1] === '"') { cell += '"'; i++; } else q = false; }
-      else cell += ch;
-    } else if (ch === '"') q = true;
+    if (q) { if (ch === '"') { if (text[i+1] === '"') { cell += '"'; i++; } else q = false; } else cell += ch; }
+    else if (ch === '"') q = true;
     else if (ch === ",") { row.push(cell); cell = ""; }
     else if (ch === "\n") { row.push(cell); if (row.length > 1 || row[0] !== "") rows.push(row); row = []; cell = ""; }
     else if (ch !== "\r") cell += ch;
@@ -304,19 +413,46 @@ function parseCSV(text) {
 }
 
 function trendChip(pct, baseline) {
-  if (baseline) return `<span class="chip base">नोंद सुरू · baseline</span>`;
+  if (baseline) return `<span class="chip base">${bi("नोंद सुरू","baseline")}</span>`;
   if (pct === null || pct === undefined) return `<span class="chip steady">—</span>`;
-  if (Math.abs(pct) < 0.05) return `<span class="chip steady">स्थिर · 0%</span>`;
+  if (Math.abs(pct) < 0.05) return `<span class="chip steady">${bi("स्थिर","steady")}</span>`;
   const up = pct > 0;
-  return `<span class="chip ${up ? "up" : "down"}">${up ? "▲" : "▼"} ${up ? "+" : "−"}${Math.abs(pct).toFixed(1)}%</span>`;
+  return `<span class="chip ${up?"up":"down"}">${up?"▲ +":"▼ −"}${Math.abs(pct).toFixed(1)}%</span>`;
 }
+
+function getCSS(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+function sparkline(vals, w = 64, h = 22) {
+  if (vals.length < 2) return "";
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+  const y = v => hi === lo ? h/2 : 2 + (1 - (v - lo)/(hi - lo)) * (h - 4);
+  const x = i => (i/(vals.length - 1)) * (w - 6) + 3;
+  const pts = vals.map((v,i) => `${i?"L":"M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join("");
+  const col = getCSS(vals[vals.length-1] >= vals[0] ? "--up" : "--down");
+  return `<svg class="spark" width="${w}" height="${h}" aria-hidden="true">
+    <path d="${pts}" fill="none" stroke="${getCSS("--axis")}" stroke-width="1.5" stroke-linejoin="round"/>
+    <circle cx="${x(vals.length-1)}" cy="${y(vals[vals.length-1])}" r="2.6" fill="${col}"/></svg>`;
+}
+
+function countUp(el, target, prefix) {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) { el.textContent = prefix + Math.round(target).toLocaleString("en-IN"); return; }
+  const t0 = performance.now(), dur = 550, from = target * 0.92;
+  (function tick(t) {
+    const k = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = prefix + Math.round(from + (target - from) * e).toLocaleString("en-IN");
+    if (k < 1) requestAnimationFrame(tick);
+  })(t0);
+}
+
+const istToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date());
 
 async function main() {
   let latest, histRows;
   try {
     const [r1, r2] = await Promise.all([
-      fetch("reports/latest.json", {cache: "no-store"}),
-      fetch("data/history.csv", {cache: "no-store"})
+      fetch("reports/latest.json", {cache:"no-store"}),
+      fetch("data/history.csv", {cache:"no-store"})
     ]);
     if (!r1.ok || !r2.ok) throw new Error(`HTTP ${r1.status}/${r2.status}`);
     latest = await r1.json();
@@ -324,43 +460,84 @@ async function main() {
   } catch (e) {
     $("#error").style.display = "block";
     $("#error").innerHTML = `डेटा लोड झाला नाही · Could not load data (${e.message}). ` +
-      `Refresh in a minute, or check the <a href="https://github.com/shamathakur77/nashik-mandi-watch/actions">pipeline status</a>.`;
+      `Refresh shortly, or check the <a href="https://github.com/shamathakur77/nashik-mandi-watch/actions">pipeline</a>.`;
+    document.querySelectorAll(".skel").forEach(x => x.remove());
     return;
   }
 
   const h = latest.headline;
-  $("#dateline").textContent = dateBi(latest.date);
+  const pageURL = location.origin + location.pathname;
+  const shareText = `कांदा आज ${fmt(h.modal)} प्रति क्विंटल (${shortMkt(h.market)}). ` +
+    `Onion today ${fmt(h.modal)}/qtl. रोजचे नाशिक भाव → ${pageURL}`;
+  const waHref = "https://wa.me/?text=" + encodeURIComponent(shareText);
+
+  /* meta row */
+  $("#dateline").innerHTML = dateBi(latest.date);
+  const fresh = $("#fresh");
+  fresh.style.display = "";
+  if (latest.date === istToday()) {
+    $("#fresh-t").innerHTML = bi("आजचे ताजे भाव","live · today's prices");
+  } else {
+    fresh.classList.add("stale");
+    $("#fresh-t").innerHTML = bi(`शेवटची नोंद: ${dateOne(latest.date,"mr")}`,`last trading day: ${dateOne(latest.date,"en")}`);
+  }
   $("#gen-line").textContent = "Last pipeline run: " + latest.generated_at;
 
-  /* ---- hero ---- */
-  $("#hero").style.display = "";
-  $("#hero-kicker").textContent = `कांदा · Onion · ${h.market} · modal`;
-  $("#hero-title").textContent = `कांदा — ${shortMkt(h.market)}`;
-  $("#hero-price").textContent = fmt(h.modal);
-  $("#hero-range").textContent = `आजचा भाव: ${fmt(h.min)} ते ${fmt(h.max)} · today's range at ${shortMkt(h.market)}`;
+  /* hero */
+  $("#hero-kicker").innerHTML = bi("कांदा — मोडल भाव","Onion · modal price") +
+    ` <span style="color:var(--muted)">· ${h.market}</span>`;
+  $("#hero-title").innerHTML = bi(`कांदा — ${shortMkt(h.market)}`, `Onion — ${shortMkt(h.market)}`);
+  countUp($("#hero-price"), h.modal, "₹");
+  $("#hero-range").innerHTML = bi(`आजचा भाव: ${fmt(h.min)} ते ${fmt(h.max)}`, `today's range: ${fmt(h.min)}–${fmt(h.max)}`);
   const hd = $("#hero-delta");
   if (h.status === "BASELINE") {
-    hd.innerHTML = `<div class="baseline-note">${dateBi(h.baseline_since).split("·")[0].trim()} पासून नोंद सुरू — तुलना लवकरच.
-      <small>Building the price baseline — trend arrows appear after 7 market days.</small></div>`;
+    hd.innerHTML = `<div class="baseline-note">
+      <span class="t-mr">${dateOne(h.baseline_since,"mr")} पासून नोंद सुरू — तुलना लवकरच.</span>
+      <span class="t-en">Building the price baseline since ${dateOne(h.baseline_since,"en")}.</span>
+      <small>${bi("७ बाजार दिवसांनंतर वाढ-घट दिसू लागेल","trend arrows appear after 7 market days")}</small></div>`;
   } else {
     const up = h.pct_7d >= 0;
-    const extra = h.pct_30d !== null && h.pct_30d !== undefined
-      ? ` · ${h.pct_30d >= 0 ? "+" : "−"}${Math.abs(h.pct_30d).toFixed(0)}% vs 30-day` : "";
-    hd.innerHTML = `<div class="delta ${up ? "up" : "down"}">
-        <span class="tri ${up ? "up" : "down"}"></span>
-        ${up ? "+" : "−"}${Math.abs(h.pct_7d).toFixed(0)}%
-        <span class="sub">vs 7-day avg · ७ दिवसांच्या सरासरीशी${extra}</span></div>`;
+    const extra = (h.pct_30d !== null && h.pct_30d !== undefined)
+      ? ` · ${h.pct_30d >= 0 ? "+" : "−"}${Math.abs(h.pct_30d).toFixed(0)}% / 30d` : "";
+    hd.innerHTML = `<div class="delta ${up?"up":"down"}"><span class="tri ${up?"up":"down"}"></span>
+      ${up?"+":"−"}${Math.abs(h.pct_7d).toFixed(0)}%
+      <span class="sub2">${bi("७ दिवसांच्या सरासरीशी तुलना","vs 7-day average")}${extra}</span></div>`;
   }
+  $("#wa-btn").href = waHref;
+  $("#hero-actions").style.display = "";
 
-  /* ---- onion markets table ---- */
+  /* sticky bar */
+  $("#st-price").textContent = fmt(h.modal);
+  $("#st-mkt").innerHTML = bi(`कांदा · ${shortMkt(h.market)}`, `onion · ${shortMkt(h.market)}`);
+  $("#st-chip").innerHTML = trendChip(h.pct_7d, h.status === "BASELINE");
+  $("#st-wa").href = waHref;
+  new IntersectionObserver(es => $("#sticky").classList.toggle("on", !es[0].isIntersecting),
+    { rootMargin: "-80px 0px 0px 0px" }).observe($("#hero"));
+
+  /* onion history helpers */
+  const onionHist = histRows.filter(r => r.district === "Nashik" && r.commodity === "Onion");
+  const dailySeries = mkt => {
+    const byDate = new Map();
+    onionHist.filter(r => r.market === mkt).forEach(r => {
+      const k = r.arrival_date, v = +r.modal_price;
+      byDate.set(k, byDate.has(k) ? (byDate.get(k) + v) / 2 : v);
+    });
+    return [...byDate.entries()].sort((a,b) => a[0] < b[0] ? -1 : 1);
+  };
+
+  /* onion table */
   const rows = latest.onion_markets.map(m => ({
     market: m.market, min: m.min, modal: m.modal, max: m.max,
-    pct: m.pct_7d, baseline: m.status === "BASELINE",
-    hl: m.market === h.market
+    pct: m.pct_7d, baseline: m.status === "BASELINE", hl: m.market === h.market,
+    spark: dailySeries(m.market).slice(-14).map(p => p[1])
   }));
   const tbody = $("#onion-table tbody");
   let sortK = "modal", sortDir = -1;
   function renderOnion() {
+    document.querySelectorAll("#onion-table th").forEach(t => {
+      t.classList.toggle("sorted", t.dataset.k === sortK);
+      t.querySelector(".arr").textContent = sortDir === -1 ? "▾" : "▴";
+    });
     const sorted = [...rows].sort((a,b) => {
       const va = a[sortK], vb = b[sortK];
       if (sortK === "market") return sortDir * String(va).localeCompare(String(vb));
@@ -368,12 +545,11 @@ async function main() {
       return sortDir * (va - vb);
     });
     tbody.innerHTML = sorted.map(r => `<tr>
-      <td><span class="mr">${shortMkt(r.market)}${r.hl ? " ★" : ""}</span><span class="en">${r.market}</span></td>
+      <td><span class="mr">${shortMkt(r.market)}${r.hl ? " ★" : ""}</span><span class="en2">${r.market}</span></td>
       <td class="num">${fmt(r.min)}</td>
-      <td class="num"><b>${fmt(r.modal)}</b></td>
+      <td class="num"><b>${fmt(r.modal)}</b>${r.spark.length > 1 ? sparkline(r.spark) : ""}</td>
       <td class="num">${fmt(r.max)}</td>
-      <td class="num">${trendChip(r.pct, r.baseline)}</td>
-    </tr>`).join("");
+      <td class="num">${trendChip(r.pct, r.baseline)}</td></tr>`).join("");
   }
   document.querySelectorAll("#onion-table th").forEach(th =>
     th.addEventListener("click", () => {
@@ -384,107 +560,113 @@ async function main() {
   renderOnion();
   $("#markets-card").style.display = "";
 
-  /* ---- other commodities (from history, latest date, non-onion) ---- */
+  /* other commodities */
   const todays = histRows.filter(r => r.district === "Nashik" && r.arrival_date === latest.date && r.commodity !== "Onion");
   const byCom = new Map();
   todays.forEach(r => {
-    const key = r.commodity, modal = +r.modal_price;
-    const cur = byCom.get(key);
-    if (!cur || modal > cur.modal) byCom.set(key, {market: r.market, modal});
+    const modal = +r.modal_price, cur = byCom.get(r.commodity);
+    if (!cur || modal > cur.modal) byCom.set(r.commodity, {market: r.market, modal});
   });
   const others = [...byCom.entries()].sort((a,b) => a[0].localeCompare(b[0]));
   if (others.length) {
     $("#others-table tbody").innerHTML = others.map(([c,v]) => `<tr>
-      <td><span class="mr">${comBi(c)}</span></td>
-      <td><span class="en" style="font-size:14px;color:var(--ink2)">${shortMkt(v.market)}</span></td>
+      <td><span class="mr">${comCell(c)}</span></td>
+      <td style="color:var(--ink2);font-size:14px">${shortMkt(v.market)}</td>
       <td class="num"><b>${fmt(v.modal)}</b></td></tr>`).join("");
     $("#others-card").style.display = "";
   }
 
-  /* ---- analyst: trend chart ---- */
+  /* trend chart */
   const CHART_MARKETS = ["Lasalgaon APMC","Lasalgaon(Niphad) APMC","Lasalgaon(Vinchur) APMC"];
   const COLORS = [getCSS("--accent"), getCSS("--s2"), getCSS("--s3")];
-  const onionHist = histRows.filter(r => r.district === "Nashik" && r.commodity === "Onion");
-  const series = CHART_MARKETS.map((mkt,i) => {
-    const byDate = new Map();
-    onionHist.filter(r => r.market === mkt).forEach(r => {
-      const k = r.arrival_date, v = +r.modal_price;
-      byDate.set(k, byDate.has(k) ? (byDate.get(k) + v) / 2 : v);
-    });
-    return { name: shortMkt(mkt), color: COLORS[i],
-             pts: [...byDate.entries()].sort((a,b) => a[0] < b[0] ? -1 : 1) };
-  }).filter(s => s.pts.length);
+  const series = CHART_MARKETS.map((mkt,i) =>
+    ({ name: shortMkt(mkt), color: COLORS[i], pts: dailySeries(mkt) })).filter(s => s.pts.length);
   const allDates = [...new Set(series.flatMap(s => s.pts.map(p => p[0])))].sort();
   $("#chart-days").textContent = allDates.length + (allDates.length === 1 ? " trading day so far" : " trading days");
   $("#chart-legend").innerHTML = series.map(s =>
     `<span class="key"><span class="swatch" style="background:${s.color}"></span>${s.name}</span>`).join("");
   if (allDates.length >= 2) drawChart(series, allDates);
-  else $("#chart-box").innerHTML = `<div class="placeholder">इतिहास जमा होतो आहे — रेषा-आलेख २ बाजार दिवसांनंतर दिसेल.<br>
-    History building — the trend line appears after 2 trading days. (Today: ${allDates.length})</div>`;
+  else $("#chart-box").innerHTML = `<div class="placeholder">
+    <span class="t-mr">इतिहास जमा होतो आहे — आलेख २ बाजार दिवसांनंतर दिसेल.</span>
+    <span class="t-en">History building — the trend chart appears after 2 trading days. (today: day ${allDates.length})</span></div>`;
 
-  /* ---- movers ---- */
+  /* movers */
   if (latest.top_movers && latest.top_movers.length) {
     $("#movers-body").innerHTML = `<table><thead><tr>
-      <th>शेतमाल · Commodity</th><th>बाजार</th><th class="num">काल · prev</th><th class="num">आज · today</th><th class="num">बदल</th>
-      </tr></thead><tbody>` + latest.top_movers.map(m => `<tr>
-        <td><span class="mr">${comBi(m.commodity)}</span></td>
-        <td><span class="en" style="font-size:14px;color:var(--ink2)">${shortMkt(m.market)}</span></td>
+      <th>${bi("शेतमाल","commodity")}</th><th>${bi("बाजार","market")}</th>
+      <th class="num">${bi("काल","prev")}</th><th class="num">${bi("आज","today")}</th>
+      <th class="num">${bi("बदल","move")}</th></tr></thead><tbody>` +
+      latest.top_movers.map(m => `<tr>
+        <td><span class="mr">${comCell(m.commodity)}</span></td>
+        <td style="color:var(--ink2);font-size:14px">${shortMkt(m.market)}</td>
         <td class="num">${fmt(m.prev_modal)}</td>
         <td class="num"><b>${fmt(m.modal)}</b></td>
         <td class="num">${trendChip(m.pct_vs_prev_day, false)}</td></tr>`).join("") + "</tbody></table>";
   } else {
-    $("#movers-body").innerHTML = `<div class="placeholder">${latest.top_movers_note || "उद्यापासून · from tomorrow"}</div>`;
+    $("#movers-body").innerHTML = `<div class="placeholder">
+      <span class="t-mr">उद्यापासून — दुसऱ्या बाजार दिवसानंतर.</span>
+      <span class="t-en">From tomorrow — needs 2 trading days.</span></div>`;
   }
 
-  /* ---- MH comparison ---- */
+  /* MH comparison */
   const c = latest.mh_onion_comparison;
   if (c) {
     const diff = c.nashik_median_modal - c.maharashtra_median_modal;
+    const cmp = diff === 0 ? bi("राज्याच्या बरोबरीत","level with the state")
+      : bi(`महाराष्ट्रापेक्षा ${diff > 0 ? "+" : "−"}₹${Math.abs(diff).toLocaleString("en-IN")}`,
+           `${diff > 0 ? "+" : "−"}₹${Math.abs(diff).toLocaleString("en-IN")} vs state`);
     $("#mh-split").innerHTML = `
-      <div class="stat"><div class="lbl">नाशिक जिल्हा · Nashik median</div>
-        <div class="val">${fmt(c.nashik_median_modal)}</div>
-        <div class="cmp">${diff === 0 ? "राज्याच्या बरोबरीत · same as state" :
-          (diff > 0 ? "+" : "−") + fmt(Math.abs(diff)).slice(1) + " ₹ vs महाराष्ट्र"}</div></div>
-      <div class="stat"><div class="lbl">महाराष्ट्र · State median</div>
+      <div class="stat"><div class="lbl">${bi("नाशिक जिल्हा मध्यक","Nashik median")}</div>
+        <div class="val">${fmt(c.nashik_median_modal)}</div><div class="cmp">${cmp}</div></div>
+      <div class="stat"><div class="lbl">${bi("महाराष्ट्र मध्यक","State median")}</div>
         <div class="val">${fmt(c.maharashtra_median_modal)}</div>
-        <div class="cmp">${c.maharashtra_markets_reporting} markets reporting today</div></div>`;
+        <div class="cmp">${c.maharashtra_markets_reporting} ${bi("बाजारांची नोंद","markets reporting")}</div></div>`;
   }
 }
 
-function getCSS(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
-
-/* Minimal hand-rolled line chart: 2px lines, hairline grid, crosshair tooltip. */
 function drawChart(series, dates) {
   const box = $("#chart-box");
-  const Wc = Math.min(box.clientWidth || 700, 760), Hc = 300;
-  const P = {t: 14, r: 14, b: 30, l: 52};
+  const Wc = Math.min(box.clientWidth || 700, 780), Hc = 320;
+  const P = {t: 16, r: 74, b: 32, l: 52};
   const xs = d => P.l + (dates.indexOf(d) / Math.max(dates.length - 1, 1)) * (Wc - P.l - P.r);
   const vals = series.flatMap(s => s.pts.map(p => p[1]));
   let lo = Math.min(...vals), hi = Math.max(...vals);
   if (lo === hi) { lo -= 100; hi += 100; }
-  const pad = (hi - lo) * 0.12; lo -= pad; hi += pad;
+  const pad = (hi - lo) * 0.14; lo -= pad; hi += pad;
   const ys = v => P.t + (1 - (v - lo) / (hi - lo)) * (Hc - P.t - P.b);
-  const ticks = niceTicks(lo, hi, 4);
   let g = "";
-  ticks.forEach(t => {
+  niceTicks(lo, hi, 4).forEach(t => {
     g += `<line x1="${P.l}" x2="${Wc-P.r}" y1="${ys(t)}" y2="${ys(t)}" stroke="${getCSS("--hair")}" stroke-width="1"/>`;
-    g += `<text x="${P.l-8}" y="${ys(t)+4}" text-anchor="end" font-size="11" fill="${getCSS("--muted")}">${(t/1000).toFixed(1).replace(/\.0$/,"")}k</text>`;
+    g += `<text x="${P.l-8}" y="${ys(t)+4}" text-anchor="end" font-size="11.5" fill="${getCSS("--muted")}">₹${(t/1000).toFixed(1).replace(/\.0$/,"")}k</text>`;
   });
   const xEvery = Math.max(1, Math.ceil(dates.length / 6));
   dates.forEach((d,i) => {
     if (i % xEvery !== 0 && i !== dates.length - 1) return;
     const [,m,dd] = d.split("-");
-    g += `<text x="${xs(d)}" y="${Hc-8}" text-anchor="middle" font-size="11" fill="${getCSS("--muted")}">${+dd}/${+m}</text>`;
+    g += `<text x="${xs(d)}" y="${Hc-9}" text-anchor="middle" font-size="11.5" fill="${getCSS("--muted")}">${+dd}/${+m}</text>`;
   });
+  const yBase = ys(lo);
   series.forEach(s => {
-    const path = s.pts.map((p,i) => `${i ? "L" : "M"}${xs(p[0]).toFixed(1)},${ys(p[1]).toFixed(1)}`).join("");
-    g += `<path d="${path}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    const line = s.pts.map((p,i) => `${i?"L":"M"}${xs(p[0]).toFixed(1)},${ys(p[1]).toFixed(1)}`).join("");
+    if (s.pts.length > 1) {
+      const area = line + `L${xs(s.pts[s.pts.length-1][0]).toFixed(1)},${yBase}L${xs(s.pts[0][0]).toFixed(1)},${yBase}Z`;
+      g += `<path d="${area}" fill="${s.color}" opacity="0.08"/>`;
+    }
+    g += `<path d="${line}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  });
+  /* endpoint markers + value labels: colored mark, ink text, collision-nudged */
+  const ends = series.map(s => {
     const last = s.pts[s.pts.length-1];
-    g += `<circle cx="${xs(last[0])}" cy="${ys(last[1])}" r="4.5" fill="${s.color}" stroke="${getCSS("--surface")}" stroke-width="2"/>`;
+    return { s, x: xs(last[0]), y: ys(last[1]), v: last[1], ly: null };
+  }).sort((a,b) => a.y - b.y);
+  ends.forEach((e,i) => { e.ly = i === 0 ? e.y : Math.max(ends[i-1].ly + 16, e.y); });
+  ends.forEach(e => {
+    g += `<circle cx="${e.x}" cy="${e.y}" r="4.5" fill="${e.s.color}" stroke="${getCSS("--surface")}" stroke-width="2"/>`;
+    g += `<text x="${e.x+10}" y="${e.ly+4}" font-size="12" font-weight="700" fill="${getCSS("--ink")}">${fmt(e.v)}</text>`;
   });
   box.innerHTML = `<svg id="trend-svg" width="100%" viewBox="0 0 ${Wc} ${Hc}" role="img"
-      aria-label="Onion modal price trend for Lasalgaon yards">${g}
-      <line id="xh" y1="${P.t}" y2="${Hc-P.b}" stroke="${getCSS("--baseline-axis")}" stroke-width="1" style="display:none"/></svg>
+      aria-label="Onion modal price trend, Lasalgaon yards">${g}
+      <line id="xh" y1="${P.t}" y2="${Hc-P.b}" stroke="${getCSS("--axis")}" stroke-width="1" style="display:none"/></svg>
     <div class="tooltip" id="tt"></div>`;
   const svg = $("#trend-svg"), tt = $("#tt"), xh = $("#xh");
   svg.addEventListener("pointermove", ev => {
@@ -497,7 +679,7 @@ function drawChart(series, dates) {
       const p = s.pts.find(p => p[0] === best);
       return p ? `<span style="color:${s.color}">●</span> ${s.name}: <b style="display:inline">${fmt(p[1])}</b>` : null;
     }).filter(Boolean).join("<br>");
-    tt.innerHTML = `<b>${dateBi(best)}</b>${lines}`;
+    tt.innerHTML = `<b>${best.split("-").reverse().join("/")}</b>${lines}`;
     tt.style.display = "block";
     const bx = box.getBoundingClientRect();
     let lx = ev.clientX - bx.left + 14;
