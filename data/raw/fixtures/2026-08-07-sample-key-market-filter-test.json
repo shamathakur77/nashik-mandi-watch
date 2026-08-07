@@ -1,0 +1,21 @@
+{
+    "_note": "Response to filters[market]=Lasalgaon(...)%20APMC test (sample key). Filter did NOT behave as exact match: total=473 spans all Maharashtra districts, relevance-ranked with both Lasalgaon variants first. See api-contract.md 'Filter syntax' section.",
+    "updated_date": "2026-08-07T09:01:02Z",
+    "status": "ok",
+    "total": 473,
+    "count": 10,
+    "limit": "10",
+    "offset": "0",
+    "records": [
+        {"state": "Maharashtra", "district": "Nashik", "market": "Lasalgaon(Niphad) APMC", "commodity": "Onion", "variety": "Unhali", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 800, "max_price": 2500, "modal_price": 2150},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Lasalgaon(Vinchur) APMC", "commodity": "Onion", "variety": "Unhali", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 600, "max_price": 2525, "modal_price": 2150},
+        {"state": "Maharashtra", "district": "Sangli", "market": "Vita APMC", "commodity": "Bhindi(Ladies Finger)", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 3000, "max_price": 3500, "modal_price": 3200},
+        {"state": "Maharashtra", "district": "Sangli", "market": "Vita APMC", "commodity": "Green Chilli", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 4000, "max_price": 4500, "modal_price": 4200},
+        {"state": "Maharashtra", "district": "Nagpur", "market": "Nagpur APMC", "commodity": "Bengal Gram(Gram)(Whole)", "variety": "Other", "grade": "FAQ", "arrival_date": "07/08/2026", "min_price": 5900, "max_price": 6262, "modal_price": 6171},
+        {"state": "Maharashtra", "district": "Nagpur", "market": "Nagpur APMC", "commodity": "Chili Red", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 14000, "max_price": 18000, "modal_price": 17000},
+        {"state": "Maharashtra", "district": "Palghar", "market": "Palghar APMC", "commodity": "Rice", "variety": "1009 Kar", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 5240, "max_price": 5240, "modal_price": 5240},
+        {"state": "Maharashtra", "district": "Ahilyanagar", "market": "Rahuri APMC", "commodity": "Tomato", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 1000, "max_price": 2000, "modal_price": 1500},
+        {"state": "Maharashtra", "district": "Jalna", "market": "Mantha APMC", "commodity": "Bajra(Pearl Millet/Cumbu)", "variety": "Other", "grade": "Non-FAQ", "arrival_date": "07/08/2026", "min_price": 2500, "max_price": 2510, "modal_price": 2500},
+        {"state": "Maharashtra", "district": "Jalna", "market": "Mantha APMC", "commodity": "Jowar(Sorghum)", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 3800, "max_price": 4100, "modal_price": 3950}
+    ]
+}

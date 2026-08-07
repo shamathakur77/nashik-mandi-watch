@@ -1,0 +1,65 @@
+{
+    "created": 1627939168,
+    "updated": 1786089648,
+    "created_date": "2021-08-02T21:19:28Z",
+    "updated_date": "2026-08-07T08:00:48Z",
+    "active": "1",
+    "index_name": "9ef84268-d588-465a-a308-a864a43d0070",
+    "org": [
+        "Ministry of Agriculture and Farmers Welfare",
+        "Department of Agriculture and Farmers Welfare"
+    ],
+    "org_type": "Central",
+    "source": "data.gov.in",
+    "title": "Current Daily Price of Various Commodities from Various Markets (Mandi)",
+    "external_ws_url": "",
+    "visualizable": "1",
+    "field": [
+        {"name": "State", "id": "state", "type": "keyword"},
+        {"name": "District", "id": "district", "type": "keyword"},
+        {"name": "Market", "id": "market", "type": "keyword"},
+        {"name": "Commodity", "id": "commodity", "type": "keyword"},
+        {"name": "Variety", "id": "variety", "type": "keyword"},
+        {"name": "Grade", "id": "grade", "type": "keyword"},
+        {"name": "Arrival_Date", "id": "arrival_date", "type": "date"},
+        {"name": "Min_x0020_Price", "id": "min_price", "type": "double"},
+        {"name": "Max_x0020_Price", "id": "max_price", "type": "double"},
+        {"name": "Modal_x0020_Price", "id": "modal_price", "type": "double"}
+    ],
+    "external_ws": 0,
+    "catalog_uuid": "6141ea17-a69d-4713-b600-0a43c8fd9a6c",
+    "sector": ["Agriculture", "Agricultural Marketing"],
+    "target_bucket": {
+        "field": "9ef84268-d588-465a-a308-a864a43d0070",
+        "index": "daily_mandi_price",
+        "type": "6141ea17-a69d-4713-b600-0a43c8fd9a6c"
+    },
+    "desc": "Current Daily Price of Various Commodities from Various Markets (Mandi)",
+    "field_exposed": [
+        {"name": "State", "id": "state.keyword", "type": "keyword"},
+        {"name": "District", "id": "district", "type": "keyword"},
+        {"name": "Market", "id": "market", "type": "keyword"},
+        {"name": "Commodity", "id": "commodity", "type": "keyword"},
+        {"name": "Variety", "id": "variety", "type": "keyword"},
+        {"name": "Grade", "id": "grade", "type": "keyword"}
+    ],
+    "message": "Resource lists",
+    "version": "2.2.0",
+    "status": "ok",
+    "total": 15,
+    "count": 10,
+    "limit": "10",
+    "offset": "0",
+    "records": [
+        {"state": "Maharashtra", "district": "Nashik", "market": "Ghoti APMC", "commodity": "Cabbage", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 900, "max_price": 900, "modal_price": 900},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Pimpalgaon Baswant APMC", "commodity": "Pomegranate", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 250, "max_price": 9750, "modal_price": 7100},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Pimpalgaon Baswant(Saykheda) APMC", "commodity": "Onion", "variety": "Unhali", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 1000, "max_price": 2341, "modal_price": 2000},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Devala APMC", "commodity": "Onion", "variety": "Unhali", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 700, "max_price": 2700, "modal_price": 2250},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Ghoti APMC", "commodity": "Cauliflower", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 1400, "max_price": 1800, "modal_price": 1600},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Ghoti APMC", "commodity": "Cucumbar(Kheera)", "variety": "Other", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 1600, "max_price": 1800, "modal_price": 1700},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Devala APMC", "commodity": "Bajra(Pearl Millet/Cumbu)", "variety": "Other", "grade": "Non-FAQ", "arrival_date": "07/08/2026", "min_price": 2150, "max_price": 2590, "modal_price": 2165},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Devala APMC", "commodity": "Wheat", "variety": "Maharashtra 2189", "grade": "FAQ", "arrival_date": "07/08/2026", "min_price": 2665, "max_price": 2675, "modal_price": 2675},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Lasalgaon(Niphad) APMC", "commodity": "Onion", "variety": "Unhali", "grade": "Local", "arrival_date": "07/08/2026", "min_price": 800, "max_price": 2500, "modal_price": 2150},
+        {"state": "Maharashtra", "district": "Nashik", "market": "Devala APMC", "commodity": "Maize", "variety": "Yellow", "grade": "Non-FAQ", "arrival_date": "07/08/2026", "min_price": 2255, "max_price": 2255, "modal_price": 2255}
+    ]
+}
