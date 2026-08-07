@@ -1,0 +1,34 @@
+# Loop 1 live test — manual trigger only.
+# Proves: (a) Actions runners can reach api.data.gov.in (contract item #4),
+#         (b) real-key pull works, full Nashik market list (contract item #2),
+#         (c) backfill feasibility via --probe-backfill (contract item #3).
+# Commits data/raw + data/history.csv so history starts on day one.
+name: Live test (fetch only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: mandi-pipeline
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Fetch mandi prices (real key) + backfill probe
+        run: python fetch_mandi.py --probe-backfill
+        env:
+          DATA_GOV_IN_KEY: ${{ secrets.DATA_GOV_IN_KEY }}
+      - name: Commit data
+        run: |
+          git config user.name "mandi-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git commit -m "Live test: initial fetch $(date -u +%F)" || echo "no changes"
+          git pull --rebase origin main
+          git push
