@@ -61,7 +61,9 @@ Nashik market strings carry an **` APMC` suffix**, and sub-yards are in parenthe
 
 - `Lasalgaon(Vinchur) APMC` — **onion, confirmed live** (min 600 / max 2525 / modal ₹2150/q) via the relevance-ranked market-filter test
 
-⏳ **PROVISIONAL:** the main Lasalgaon yard is presumed to appear as `Lasalgaon APMC` — **string still not observed live.** Suggestive but not conclusive: in the relevance-ranked test, Niphad and Vinchur topped the results while no plain `Lasalgaon APMC` appeared; it may simply not have reported by mid-afternoon today. Close this at Loop 1 by pulling ALL Nashik records with the real key and listing distinct market strings. Until then, code must select Lasalgaon yards by **prefix match `market.startswith("Lasalgaon")`**, never by exact string equality to an unconfirmed name, and the card's headline must use the best available Lasalgaon yard (priority: main yard if it exists → Niphad → Vinchur), always printing which yard it used.
+✅ **CLOSED at Loop 1 (real-key pull, 2026-08-07 ~20:25 IST):** `Lasalgaon APMC` (main yard) **exists** — onion Unhali/Local, min 700 / modal 2200 / max 2711. Full distinct-market list for Nashik district (18 markets, real key, 61 records):
+`AGRICULTURE PRODUCE MARKET COMITEE CHANDWAD`, `Devala APMC`, `Ghoti APMC`, `Kalvan APMC`, `Lasalgaon APMC`, `Lasalgaon(Niphad) APMC`, `Lasalgaon(Vinchur) APMC`, `Manmad APMC`, `Nandgaon APMC`, `Nasik APMC`, `Perfect Krishi Market Yard Pvt Ltd, Dist Nashik`, `Pimpalgaon Baswant APMC`, `Pimpalgaon Baswant(Saykheda) APMC`, `Premium Krushi Utpanna Bazar, Nashik`, `Satana APMC`, `Sinner APMC`, `Umrane APMC`, `Yeola APMC`.
+Notes: naming is inconsistent (ALL-CAPS entries, private yards with commas in the name — CSV quoting matters). Card headline priority: `Lasalgaon APMC` → `Lasalgaon(Niphad) APMC` → `Lasalgaon(Vinchur) APMC`, selected by prefix match, always labeling the yard used. Maharashtra onion varieties observed: Unhali, Red, Local, Other, Chinchwad.
 
 ## Onion specifics (verified)
 
@@ -90,10 +92,12 @@ Nashik market strings carry an **` APMC` suffix**, and sub-yards are in parenthe
 | # | Item | Closes at |
 |---|---|---|
 | 1 | ~~Inspect further pages / market-filter variants for Lasalgaon yards~~ **CLOSED**: `Lasalgaon(Vinchur) APMC` confirmed; market filter proven unusable; main `Lasalgaon APMC` string remains unobserved | Loop 0 ✅ |
-| 2 | Full distinct-market list for Nashik with real key (closes the main-yard question) | Loop 1 start |
-| 3 | Confirm whether any historical `arrival_date` is servable (backfill feasibility) | Loop 1 |
-| 4 | Confirm GitHub Actions runners can reach the API | Loop 4 |
-| 5 | Confirm data refresh time → set cron accordingly | Loop 4 |
+| 2 | ~~Full distinct-market list for Nashik with real key~~ **CLOSED** 2026-08-07: 18 markets, `Lasalgaon APMC` confirmed | Loop 1 ✅ |
+| 3 | ~~Backfill feasibility~~ **CLOSED** 2026-08-07: `filters[arrival_date]=06/08/2026` returned only 07/08 records → filter not honored, resource is **current-day only**; history builds forward from 2026-08-07 | Loop 1 ✅ |
+| 4 | ~~Actions runners reach the API~~ **CLOSED** 2026-08-07: live-test workflow fetched 61+46 records from a GitHub-hosted runner | Loop 1 ✅ |
+| 5 | Data refresh time → cron: index observed still filling at 13:30 IST (Loop 0) and full by ~20:25 IST (Loop 1 pull). **Decision:** run twice daily — 04:00 UTC (09:30 IST, per spec) + 10:00 UTC (15:30 IST, catches the full day). Dedupe makes the double-run safe; last write wins. Tune after a week of real runs. | Loop 4 ✅ (schedule set; observe) |
+
+Additional Loop 1 observation: `filters[commodity]=Onion` returned 46 records of which 4 were dropped by the mandatory client-side re-filter — commodity filtering is also loose. The client-side re-filter stays permanent.
 
 ## Loop 0 sign-off
 
