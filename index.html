@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>नाशिक मंडी भाव · Nashik Mandi Watch</title>
+<meta name="description" content="रोजचे नाशिक जिल्हा कांदा बाजारभाव · Daily Nashik district onion mandi prices from AGMARKNET via data.gov.in">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧅</text></svg>">
+<style>
+  :root {
+    color-scheme: light;
+    --surface: #fcfcfb;
+    --plane: #f9f9f7;
+    --ink: #0b0b0b;
+    --ink2: #52514e;
+    --muted: #898781;
+    --hair: #e1e0d9;
+    --baseline-axis: #c3c2b7;
+    --up: #006300;
+    --down: #d03b3b;
+    --accent: #2a78d6;      /* series 1 */
+    --s2: #eb6834;          /* series 2 */
+    --s3: #1baf7a;          /* series 3 */
+    --chip-baseline: #1c5cab;
+    --chip-baseline-bg: #cde2fb;
+    --ring: rgba(11,11,11,.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --surface: #1a1a19;
+      --plane: #0d0d0d;
+      --ink: #ffffff;
+      --ink2: #c3c2b7;
+      --muted: #898781;
+      --hair: #2c2c2a;
+      --baseline-axis: #383835;
+      --up: #0ca30c;
+      --down: #e66767;
+      --accent: #3987e5;
+      --s2: #d95926;
+      --s3: #199e70;
+      --chip-baseline: #86b6ef;
+      --chip-baseline-bg: #10284a;
+      --ring: rgba(255,255,255,.10);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--plane);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Sans Devanagari", sans-serif;
+    line-height: 1.45;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px 64px; }
+
+  header.site {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px; padding: 22px 0 14px; flex-wrap: wrap;
+  }
+  .brand { font-weight: 700; letter-spacing: .12em; font-size: 13px; color: var(--muted); text-transform: uppercase; }
+  .brand b { color: var(--ink); }
+  #dateline { font-size: 14px; color: var(--ink2); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--ring);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 14px 0;
+  }
+
+  /* hero */
+  .hero-kicker { font-size: 15px; color: var(--ink2); margin-bottom: 2px; }
+  .hero-title { font-size: clamp(26px, 6vw, 34px); font-weight: 700; letter-spacing: -.01em; }
+  .hero-price-row { display: flex; align-items: flex-end; gap: 14px; flex-wrap: wrap; margin: 10px 0 4px; }
+  .hero-price { font-size: clamp(56px, 15vw, 92px); font-weight: 700; letter-spacing: -.02em; line-height: 1; }
+  .hero-unit { color: var(--ink2); font-size: 15px; line-height: 1.35; padding-bottom: 10px; }
+  .delta { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20px; }
+  .delta .sub { font-weight: 400; color: var(--ink2); font-size: 14px; }
+  .tri { width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; }
+  .tri.up   { border-bottom: 14px solid var(--up); }
+  .tri.down { border-top:    14px solid var(--down); }
+  .delta.up   { color: var(--up); }
+  .delta.down { color: var(--down); }
+  .baseline-note {
+    border: 2px solid var(--chip-baseline); color: var(--chip-baseline);
+    border-radius: 12px; padding: 12px 16px; margin-top: 12px; font-weight: 600;
+  }
+  .baseline-note small { display: block; font-weight: 400; color: var(--ink2); margin-top: 2px; }
+  .range { color: var(--muted); font-size: 14px; margin-top: 12px; }
+
+  h2 { font-size: 17px; margin: 0 0 4px; }
+  h2 + .sub { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th {
+    text-align: left; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); font-weight: 600; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--hair);
+    cursor: pointer; user-select: none; white-space: nowrap;
+  }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 0; padding-left: 8px; }
+  td { padding: 10px 8px 10px 0; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td .mr { display: block; font-weight: 600; }
+  td .en { display: block; color: var(--muted); font-size: 12.5px; }
+  td.num b { font-weight: 700; }
+  .chip {
+    display: inline-block; font-size: 11.5px; font-weight: 700; border-radius: 999px;
+    padding: 2px 9px; white-space: nowrap;
+  }
+  .chip.up   { color: var(--up);   background: color-mix(in srgb, var(--up) 12%, var(--surface)); }
+  .chip.down { color: var(--down); background: color-mix(in srgb, var(--down) 12%, var(--surface)); }
+  .chip.base { color: var(--chip-baseline); background: var(--chip-baseline-bg); }
+  .chip.steady { color: var(--ink2); background: color-mix(in srgb, var(--ink2) 10%, var(--surface)); }
+
+  details { margin-top: 6px; }
+  details > summary {
+    list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
+    font-weight: 700; font-size: 16px; padding: 16px 0;
+  }
+  details > summary::-webkit-details-marker { display: none; }
+  .caret { transition: transform .15s; color: var(--muted); }
+  details[open] .caret { transform: rotate(90deg); }
+  summary .sub2 { font-weight: 400; color: var(--muted); font-size: 13px; }
+
+  /* chart */
+  .chart-box { position: relative; }
+  svg text { font-family: inherit; }
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 6px 0 4px; font-size: 13px; color: var(--ink2); }
+  .legend .key { display: inline-flex; align-items: center; gap: 7px; }
+  .legend .swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+  .tooltip {
+    position: absolute; pointer-events: none; background: var(--surface);
+    border: 1px solid var(--ring); border-radius: 10px; padding: 8px 12px;
+    font-size: 12.5px; box-shadow: 0 4px 14px rgba(0,0,0,.10); display: none; z-index: 5;
+    white-space: nowrap;
+  }
+  .tooltip b { display: block; margin-bottom: 2px; }
+  .placeholder {
+    border: 1.5px dashed var(--hair); border-radius: 12px; padding: 26px 20px;
+    color: var(--muted); font-size: 14px; text-align: center;
+  }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .split { grid-template-columns: 1fr; } }
+  .stat { border: 1px solid var(--hair); border-radius: 12px; padding: 14px 16px; }
+  .stat .lbl { font-size: 12.5px; color: var(--muted); }
+  .stat .val { font-size: 26px; font-weight: 700; font-variant-numeric: normal; }
+  .stat .cmp { font-size: 12.5px; color: var(--ink2); }
+
+  @media (max-width: 480px) {
+    #onion-table th:nth-child(2), #onion-table td:nth-child(2),
+    #onion-table th:nth-child(4), #onion-table td:nth-child(4) { display: none; }
+  }
+  footer { color: var(--muted); font-size: 12.5px; margin-top: 28px; line-height: 1.7; }
+  footer a { color: var(--ink2); }
+  .status-line { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+  .err {
+    background: color-mix(in srgb, var(--down) 8%, var(--surface));
+    border: 1px solid var(--down); color: var(--ink);
+    border-radius: 12px; padding: 14px 16px; font-size: 14px; margin: 14px 0;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <div class="brand"><b>नाशिक मंडी भाव</b> · NASHIK MANDI WATCH</div>
+    <div id="dateline">—</div>
+  </header>
+
+  <div id="error" class="err" style="display:none"></div>
+
+  <!-- FARMER LAYER -->
+  <section class="card" id="hero" style="display:none">
+    <div class="hero-kicker" id="hero-kicker">कांदा · Onion · modal price</div>
+    <div class="hero-title" id="hero-title">—</div>
+    <div class="hero-price-row">
+      <div class="hero-price" id="hero-price">—</div>
+      <div class="hero-unit">प्रति क्विंटल<br>per quintal</div>
+    </div>
+    <div id="hero-delta"></div>
+    <div class="range" id="hero-range"></div>
+  </section>
+
+  <section class="card" id="markets-card" style="display:none">
+    <h2>आजचे कांदा भाव — सर्व बाजार</h2>
+    <div class="sub">Today's onion prices · every reporting Nashik market · tap headers to sort</div>
+    <table id="onion-table" aria-label="Onion prices by market">
+      <thead><tr>
+        <th data-k="market">बाजार · Market</th>
+        <th class="num" data-k="min">किमान<br>min</th>
+        <th class="num" data-k="modal">मोडल<br>modal</th>
+        <th class="num" data-k="max">कमाल<br>max</th>
+        <th class="num" data-k="pct">कल<br>trend</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section class="card" id="others-card" style="display:none">
+    <h2>इतर भाव</h2>
+    <div class="sub">Other commodities today (₹/quintal)</div>
+    <table id="others-table" aria-label="Other commodity prices">
+      <thead><tr>
+        <th data-k="name">शेतमाल · Commodity</th>
+        <th data-k="market">बाजार · Market</th>
+        <th class="num" data-k="modal">मोडल · modal</th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <!-- ANALYST LAYER -->
+  <details id="analyst">
+    <summary>
+      <svg class="caret" width="14" height="14" viewBox="0 0 14 14"><path d="M4 2 L10 7 L4 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      सखोल विश्लेषण · Analyst view
+      <span class="sub2">trends · movers · Maharashtra comparison</span>
+    </summary>
+
+    <section class="card">
+      <h2>कांदा कल — Lasalgaon yards</h2>
+      <div class="sub">Modal ₹/quintal over trading days · <span id="chart-days">—</span></div>
+      <div class="legend" id="chart-legend"></div>
+      <div class="chart-box" id="chart-box"></div>
+    </section>
+
+    <section class="card" id="movers-card">
+      <h2>आजचे मोठे बदल · Top movers</h2>
+      <div class="sub">All Nashik commodities vs previous trading day</div>
+      <div id="movers-body"></div>
+    </section>
+
+    <section class="card">
+      <h2>नाशिक vs महाराष्ट्र</h2>
+      <div class="sub">Onion modal price, median across reporting markets today</div>
+      <div class="split" id="mh-split"></div>
+    </section>
+  </details>
+
+  <footer>
+    Source: <b>AGMARKNET via data.gov.in</b> · updated twice daily (09:30 &amp; 15:30 IST) ·
+    <a href="https://github.com/shamathakur77/nashik-mandi-watch">github.com/shamathakur77/nashik-mandi-watch</a><br>
+    Shareable daily card: <a href="reports/latest-card.png">latest-card.png</a> ·
+    Data contract: <a href="reports/latest.json">latest.json</a><br>
+    Built by <a href="https://www.linkedin.com/in/shama-t-b7250632">Shama Thakur</a> — data, done kindly.
+    <div class="status-line" id="gen-line"></div>
+  </footer>
+</div>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const fmt = n => "₹" + Math.round(n).toLocaleString("en-IN");
+const MR_MONTHS = ["जानेवारी","फेब्रुवारी","मार्च","एप्रिल","मे","जून","जुलै","ऑगस्ट","सप्टेंबर","ऑक्टोबर","नोव्हेंबर","डिसेंबर"];
+const EN_MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const COMMODITY_MR = {
+  "Onion":"कांदा","Tomato":"टोमॅटो","Wheat":"गहू","Maize":"मका",
+  "Bajra(Pearl Millet/Cumbu)":"बाजरी","Jowar(Sorghum)":"ज्वारी","Pomegranate":"डाळिंब",
+  "Cabbage":"कोबी","Cauliflower":"फ्लॉवर","Banana":"केळी","Grapes":"द्राक्षे","Guava":"पेरू",
+  "Apple":"सफरचंद","Papaya":"पपई","Tender Coconut":"शहाळे","Cucumbar(Kheera)":"काकडी",
+  "Green Chilli":"हिरवी मिरची","Rice":"तांदूळ","Potato":"बटाटा","Garlic":"लसूण","Soybean":"सोयाबीन",
+  "Bhindi":"भेंडी","Bhindi(Ladies Finger)":"भेंडी","Bitter gourd":"कारले","Bottle gourd":"दुधी भोपळा",
+  "Brinjal":"वांगी","Chilly Capsicum":"शिमला मिरची","Guar":"गवार","Lime":"लिंबू","Mousambi":"मोसंबी","Mousambi(Sweet Lime)":"मोसंबी","Soyabean":"सोयाबीन",
+  "Orange":"संत्री","Ridgeguard(Tori)":"दोडका","Ridgeguard":"दोडका","Sweet Pumpkin":"लाल भोपळा",
+  "Long Melon(Kakri)":"वाळूक","Long Melon":"वाळूक","Drumstick":"शेवगा","Methi(Leaves)":"मेथी",
+  "Coriander(Leaves)":"कोथिंबीर","Spinach":"पालक","Ginger(Green)":"आले","Ginger":"आले",
+  "Green Peas":"मटार","French Beans (Frasbean)":"फरसबी","Water Melon":"कलिंगड","Jack Fruit":"फणस",
+  "Chikoos(Sapota)":"चिकू","Pineapple":"अननस","Karbuja(Musk Melon)":"खरबूज","Beetroot":"बीट",
+  "Carrot":"गाजर","Turmeric":"हळद","Gram Raw(Chholia)":"हरभरा","Bengal Gram(Gram)(Whole)":"हरभरा"
+};
+const comEn = c => c.split("(")[0].trim();
+const comBi = c => (COMMODITY_MR[c] ? COMMODITY_MR[c] + " · " : "") + comEn(c);
+const MKT_ALIAS = {
+  "AGRICULTURE PRODUCE MARKET COMITEE CHANDWAD": "Chandwad",
+  "Perfect Krishi Market Yard Pvt Ltd, Dist Nashik": "Perfect Krishi (pvt)",
+  "Premium Krushi Utpanna Bazar, Nashik": "Premium Krushi (pvt)"
+};
+const shortMkt = m => MKT_ALIAS[m] || m.replace(" APMC","");
+const dateBi = iso => {
+  const [y,m,d] = iso.split("-").map(Number);
+  return `${d} ${MR_MONTHS[m-1]} · ${d} ${EN_MONTHS[m-1]} ${y}`;
+};
+
+/* CSV parser that survives quoted fields (market names contain commas) */
+function parseCSV(text) {
+  const rows = []; let row = [], cell = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (q) {
+      if (ch === '"') { if (text[i+1] === '"') { cell += '"'; i++; } else q = false; }
+      else cell += ch;
+    } else if (ch === '"') q = true;
+    else if (ch === ",") { row.push(cell); cell = ""; }
+    else if (ch === "\n") { row.push(cell); if (row.length > 1 || row[0] !== "") rows.push(row); row = []; cell = ""; }
+    else if (ch !== "\r") cell += ch;
+  }
+  if (cell !== "" || row.length) { row.push(cell); rows.push(row); }
+  const head = rows.shift();
+  return rows.map(r => Object.fromEntries(head.map((h,i) => [h, r[i]])));
+}
+
+function trendChip(pct, baseline) {
+  if (baseline) return `<span class="chip base">नोंद सुरू · baseline</span>`;
+  if (pct === null || pct === undefined) return `<span class="chip steady">—</span>`;
+  if (Math.abs(pct) < 0.05) return `<span class="chip steady">स्थिर · 0%</span>`;
+  const up = pct > 0;
+  return `<span class="chip ${up ? "up" : "down"}">${up ? "▲" : "▼"} ${up ? "+" : "−"}${Math.abs(pct).toFixed(1)}%</span>`;
+}
+
+async function main() {
+  let latest, histRows;
+  try {
+    const [r1, r2] = await Promise.all([
+      fetch("reports/latest.json", {cache: "no-store"}),
+      fetch("data/history.csv", {cache: "no-store"})
+    ]);
+    if (!r1.ok || !r2.ok) throw new Error(`HTTP ${r1.status}/${r2.status}`);
+    latest = await r1.json();
+    histRows = parseCSV(await r2.text());
+  } catch (e) {
+    $("#error").style.display = "block";
+    $("#error").innerHTML = `डेटा लोड झाला नाही · Could not load data (${e.message}). ` +
+      `Refresh in a minute, or check the <a href="https://github.com/shamathakur77/nashik-mandi-watch/actions">pipeline status</a>.`;
+    return;
+  }
+
+  const h = latest.headline;
+  $("#dateline").textContent = dateBi(latest.date);
+  $("#gen-line").textContent = "Last pipeline run: " + latest.generated_at;
+
+  /* ---- hero ---- */
+  $("#hero").style.display = "";
+  $("#hero-kicker").textContent = `कांदा · Onion · ${h.market} · modal`;
+  $("#hero-title").textContent = `कांदा — ${shortMkt(h.market)}`;
+  $("#hero-price").textContent = fmt(h.modal);
+  $("#hero-range").textContent = `आजचा भाव: ${fmt(h.min)} ते ${fmt(h.max)} · today's range at ${shortMkt(h.market)}`;
+  const hd = $("#hero-delta");
+  if (h.status === "BASELINE") {
+    hd.innerHTML = `<div class="baseline-note">${dateBi(h.baseline_since).split("·")[0].trim()} पासून नोंद सुरू — तुलना लवकरच.
+      <small>Building the price baseline — trend arrows appear after 7 market days.</small></div>`;
+  } else {
+    const up = h.pct_7d >= 0;
+    const extra = h.pct_30d !== null && h.pct_30d !== undefined
+      ? ` · ${h.pct_30d >= 0 ? "+" : "−"}${Math.abs(h.pct_30d).toFixed(0)}% vs 30-day` : "";
+    hd.innerHTML = `<div class="delta ${up ? "up" : "down"}">
+        <span class="tri ${up ? "up" : "down"}"></span>
+        ${up ? "+" : "−"}${Math.abs(h.pct_7d).toFixed(0)}%
+        <span class="sub">vs 7-day avg · ७ दिवसांच्या सरासरीशी${extra}</span></div>`;
+  }
+
+  /* ---- onion markets table ---- */
+  const rows = latest.onion_markets.map(m => ({
+    market: m.market, min: m.min, modal: m.modal, max: m.max,
+    pct: m.pct_7d, baseline: m.status === "BASELINE",
+    hl: m.market === h.market
+  }));
+  const tbody = $("#onion-table tbody");
+  let sortK = "modal", sortDir = -1;
+  function renderOnion() {
+    const sorted = [...rows].sort((a,b) => {
+      const va = a[sortK], vb = b[sortK];
+      if (sortK === "market") return sortDir * String(va).localeCompare(String(vb));
+      if (sortK === "pct") return sortDir * ((va ?? -1e9) - (vb ?? -1e9));
+      return sortDir * (va - vb);
+    });
+    tbody.innerHTML = sorted.map(r => `<tr>
+      <td><span class="mr">${shortMkt(r.market)}${r.hl ? " ★" : ""}</span><span class="en">${r.market}</span></td>
+      <td class="num">${fmt(r.min)}</td>
+      <td class="num"><b>${fmt(r.modal)}</b></td>
+      <td class="num">${fmt(r.max)}</td>
+      <td class="num">${trendChip(r.pct, r.baseline)}</td>
+    </tr>`).join("");
+  }
+  document.querySelectorAll("#onion-table th").forEach(th =>
+    th.addEventListener("click", () => {
+      const k = th.dataset.k;
+      sortDir = (sortK === k) ? -sortDir : (k === "market" ? 1 : -1);
+      sortK = k; renderOnion();
+    }));
+  renderOnion();
+  $("#markets-card").style.display = "";
+
+  /* ---- other commodities (from history, latest date, non-onion) ---- */
+  const todays = histRows.filter(r => r.district === "Nashik" && r.arrival_date === latest.date && r.commodity !== "Onion");
+  const byCom = new Map();
+  todays.forEach(r => {
+    const key = r.commodity, modal = +r.modal_price;
+    const cur = byCom.get(key);
+    if (!cur || modal > cur.modal) byCom.set(key, {market: r.market, modal});
+  });
+  const others = [...byCom.entries()].sort((a,b) => a[0].localeCompare(b[0]));
+  if (others.length) {
+    $("#others-table tbody").innerHTML = others.map(([c,v]) => `<tr>
+      <td><span class="mr">${comBi(c)}</span></td>
+      <td><span class="en" style="font-size:14px;color:var(--ink2)">${shortMkt(v.market)}</span></td>
+      <td class="num"><b>${fmt(v.modal)}</b></td></tr>`).join("");
+    $("#others-card").style.display = "";
+  }
+
+  /* ---- analyst: trend chart ---- */
+  const CHART_MARKETS = ["Lasalgaon APMC","Lasalgaon(Niphad) APMC","Lasalgaon(Vinchur) APMC"];
+  const COLORS = [getCSS("--accent"), getCSS("--s2"), getCSS("--s3")];
+  const onionHist = histRows.filter(r => r.district === "Nashik" && r.commodity === "Onion");
+  const series = CHART_MARKETS.map((mkt,i) => {
+    const byDate = new Map();
+    onionHist.filter(r => r.market === mkt).forEach(r => {
+      const k = r.arrival_date, v = +r.modal_price;
+      byDate.set(k, byDate.has(k) ? (byDate.get(k) + v) / 2 : v);
+    });
+    return { name: shortMkt(mkt), color: COLORS[i],
+             pts: [...byDate.entries()].sort((a,b) => a[0] < b[0] ? -1 : 1) };
+  }).filter(s => s.pts.length);
+  const allDates = [...new Set(series.flatMap(s => s.pts.map(p => p[0])))].sort();
+  $("#chart-days").textContent = allDates.length + (allDates.length === 1 ? " trading day so far" : " trading days");
+  $("#chart-legend").innerHTML = series.map(s =>
+    `<span class="key"><span class="swatch" style="background:${s.color}"></span>${s.name}</span>`).join("");
+  if (allDates.length >= 2) drawChart(series, allDates);
+  else $("#chart-box").innerHTML = `<div class="placeholder">इतिहास जमा होतो आहे — रेषा-आलेख २ बाजार दिवसांनंतर दिसेल.<br>
+    History building — the trend line appears after 2 trading days. (Today: ${allDates.length})</div>`;
+
+  /* ---- movers ---- */
+  if (latest.top_movers && latest.top_movers.length) {
+    $("#movers-body").innerHTML = `<table><thead><tr>
+      <th>शेतमाल · Commodity</th><th>बाजार</th><th class="num">काल · prev</th><th class="num">आज · today</th><th class="num">बदल</th>
+      </tr></thead><tbody>` + latest.top_movers.map(m => `<tr>
+        <td><span class="mr">${comBi(m.commodity)}</span></td>
+        <td><span class="en" style="font-size:14px;color:var(--ink2)">${shortMkt(m.market)}</span></td>
+        <td class="num">${fmt(m.prev_modal)}</td>
+        <td class="num"><b>${fmt(m.modal)}</b></td>
+        <td class="num">${trendChip(m.pct_vs_prev_day, false)}</td></tr>`).join("") + "</tbody></table>";
+  } else {
+    $("#movers-body").innerHTML = `<div class="placeholder">${latest.top_movers_note || "उद्यापासून · from tomorrow"}</div>`;
+  }
+
+  /* ---- MH comparison ---- */
+  const c = latest.mh_onion_comparison;
+  if (c) {
+    const diff = c.nashik_median_modal - c.maharashtra_median_modal;
+    $("#mh-split").innerHTML = `
+      <div class="stat"><div class="lbl">नाशिक जिल्हा · Nashik median</div>
+        <div class="val">${fmt(c.nashik_median_modal)}</div>
+        <div class="cmp">${diff === 0 ? "राज्याच्या बरोबरीत · same as state" :
+          (diff > 0 ? "+" : "−") + fmt(Math.abs(diff)).slice(1) + " ₹ vs महाराष्ट्र"}</div></div>
+      <div class="stat"><div class="lbl">महाराष्ट्र · State median</div>
+        <div class="val">${fmt(c.maharashtra_median_modal)}</div>
+        <div class="cmp">${c.maharashtra_markets_reporting} markets reporting today</div></div>`;
+  }
+}
+
+function getCSS(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+/* Minimal hand-rolled line chart: 2px lines, hairline grid, crosshair tooltip. */
+function drawChart(series, dates) {
+  const box = $("#chart-box");
+  const Wc = Math.min(box.clientWidth || 700, 760), Hc = 300;
+  const P = {t: 14, r: 14, b: 30, l: 52};
+  const xs = d => P.l + (dates.indexOf(d) / Math.max(dates.length - 1, 1)) * (Wc - P.l - P.r);
+  const vals = series.flatMap(s => s.pts.map(p => p[1]));
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  if (lo === hi) { lo -= 100; hi += 100; }
+  const pad = (hi - lo) * 0.12; lo -= pad; hi += pad;
+  const ys = v => P.t + (1 - (v - lo) / (hi - lo)) * (Hc - P.t - P.b);
+  const ticks = niceTicks(lo, hi, 4);
+  let g = "";
+  ticks.forEach(t => {
+    g += `<line x1="${P.l}" x2="${Wc-P.r}" y1="${ys(t)}" y2="${ys(t)}" stroke="${getCSS("--hair")}" stroke-width="1"/>`;
+    g += `<text x="${P.l-8}" y="${ys(t)+4}" text-anchor="end" font-size="11" fill="${getCSS("--muted")}">${(t/1000).toFixed(1).replace(/\.0$/,"")}k</text>`;
+  });
+  const xEvery = Math.max(1, Math.ceil(dates.length / 6));
+  dates.forEach((d,i) => {
+    if (i % xEvery !== 0 && i !== dates.length - 1) return;
+    const [,m,dd] = d.split("-");
+    g += `<text x="${xs(d)}" y="${Hc-8}" text-anchor="middle" font-size="11" fill="${getCSS("--muted")}">${+dd}/${+m}</text>`;
+  });
+  series.forEach(s => {
+    const path = s.pts.map((p,i) => `${i ? "L" : "M"}${xs(p[0]).toFixed(1)},${ys(p[1]).toFixed(1)}`).join("");
+    g += `<path d="${path}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    const last = s.pts[s.pts.length-1];
+    g += `<circle cx="${xs(last[0])}" cy="${ys(last[1])}" r="4.5" fill="${s.color}" stroke="${getCSS("--surface")}" stroke-width="2"/>`;
+  });
+  box.innerHTML = `<svg id="trend-svg" width="100%" viewBox="0 0 ${Wc} ${Hc}" role="img"
+      aria-label="Onion modal price trend for Lasalgaon yards">${g}
+      <line id="xh" y1="${P.t}" y2="${Hc-P.b}" stroke="${getCSS("--baseline-axis")}" stroke-width="1" style="display:none"/></svg>
+    <div class="tooltip" id="tt"></div>`;
+  const svg = $("#trend-svg"), tt = $("#tt"), xh = $("#xh");
+  svg.addEventListener("pointermove", ev => {
+    const r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) * (Wc / r.width);
+    let best = dates[0], bd = 1e9;
+    dates.forEach(d => { const dd = Math.abs(xs(d) - px); if (dd < bd) { bd = dd; best = d; } });
+    xh.setAttribute("x1", xs(best)); xh.setAttribute("x2", xs(best)); xh.style.display = "";
+    const lines = series.map(s => {
+      const p = s.pts.find(p => p[0] === best);
+      return p ? `<span style="color:${s.color}">●</span> ${s.name}: <b style="display:inline">${fmt(p[1])}</b>` : null;
+    }).filter(Boolean).join("<br>");
+    tt.innerHTML = `<b>${dateBi(best)}</b>${lines}`;
+    tt.style.display = "block";
+    const bx = box.getBoundingClientRect();
+    let lx = ev.clientX - bx.left + 14;
+    if (lx + tt.offsetWidth > bx.width - 4) lx = ev.clientX - bx.left - tt.offsetWidth - 14;
+    tt.style.left = lx + "px";
+    tt.style.top = Math.max(0, ev.clientY - bx.top - tt.offsetHeight - 12) + "px";
+  });
+  svg.addEventListener("pointerleave", () => { tt.style.display = "none"; xh.style.display = "none"; });
+}
+
+function niceTicks(lo, hi, n) {
+  const span = hi - lo, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const step = [1,2,2.5,5,10].map(m => m*mag).find(s => span/s <= n+1) || mag*10;
+  const out = []; for (let v = Math.ceil(lo/step)*step; v <= hi; v += step) out.push(v);
+  return out;
+}
+
+main();
+</script>
+</body>
+</html>
