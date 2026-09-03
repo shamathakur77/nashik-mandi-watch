@@ -1,0 +1,223 @@
+{
+ "fetched_at": "2026-09-03T14:14:47+05:30",
+ "nashik_all": [
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "Lasalgaon(Vinchur) ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1200,
+   "max_price": 5000,
+   "modal_price": 4400
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "APMC Sinner ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1500,
+   "max_price": 4713,
+   "modal_price": 4500
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "APMC Manmad ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1730,
+   "max_price": 4540,
+   "modal_price": 4300
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "APMC Pimpalgaon Baswant ",
+   "commodity": "Pomegranate",
+   "variety": "Other",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 250,
+   "max_price": 11500,
+   "modal_price": 8750
+  }
+ ],
+ "maharashtra_onion": [
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "APMC Manmad ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1730,
+   "max_price": 4540,
+   "modal_price": 4300
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Sangli",
+   "market": "Sangli(Phale, Bhajipala Market) ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1800,
+   "max_price": 5500,
+   "modal_price": 3650
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Pune",
+   "market": "Pune(Pimpri) ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 2500,
+   "max_price": 4200,
+   "modal_price": 3350
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Mumbai",
+   "market": "Mumbai-Onion & Potato Market ",
+   "commodity": "Onion",
+   "variety": "Other",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 3300,
+   "max_price": 4500,
+   "modal_price": 3900
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Pune",
+   "market": "Pune(Khadiki) ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1000,
+   "max_price": 1600,
+   "modal_price": 1300
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Sangli",
+   "market": "APMC Vita ",
+   "commodity": "Onion",
+   "variety": "Other",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 3500,
+   "max_price": 5000,
+   "modal_price": 4500
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "APMC Sinner ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1500,
+   "max_price": 4713,
+   "modal_price": 4500
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Pune",
+   "market": "APMC Pune ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1000,
+   "max_price": 4800,
+   "modal_price": 2900
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Satara",
+   "market": "APMC Vaduj ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 4000,
+   "max_price": 5500,
+   "modal_price": 5000
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Ahilyanagar",
+   "market": "APMC Karjat ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 2000,
+   "max_price": 2000,
+   "modal_price": 2000
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Jalgaon",
+   "market": "APMC Bhusaval ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 3500,
+   "max_price": 3500,
+   "modal_price": 3500
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Nagpur",
+   "market": "APMC Kamthi ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 4000,
+   "max_price": 4500,
+   "modal_price": 4350
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Nashik",
+   "market": "Lasalgaon(Vinchur) ",
+   "commodity": "Onion",
+   "variety": "Unhali",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 1200,
+   "max_price": 5000,
+   "modal_price": 4400
+  },
+  {
+   "state": "Maharashtra",
+   "district": "Pune",
+   "market": "Pune(Moshi) ",
+   "commodity": "Onion",
+   "variety": "Local",
+   "grade": "Local",
+   "arrival_date": "03/09/2026",
+   "min_price": 2000,
+   "max_price": 4500,
+   "modal_price": 3250
+  }
+ ]
+}

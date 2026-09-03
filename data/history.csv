@@ -1106,3 +1106,18 @@ arrival_date,state,district,market,commodity,variety,grade,min_price,max_price,m
 2026-09-02,Maharashtra,Satara,Vaduj APMC,Onion,Local,Local,4000.0,5000.0,4500.0,2026-09-02T19:42:11+05:30
 2026-09-02,Maharashtra,Satara,Vai APMC,Onion,Local,Local,2000.0,4000.0,3250.0,2026-09-02T19:42:11+05:30
 2026-09-02,Maharashtra,Nashik,Yeola APMC,Onion,Unhali,Local,500.0,4651.0,4200.0,2026-09-02T19:42:11+05:30
+2026-09-03,Maharashtra,Jalgaon,APMC Bhusaval,Onion,Unhali,Local,3500.0,3500.0,3500.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Nagpur,APMC Kamthi,Onion,Local,Local,4000.0,4500.0,4350.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Ahilyanagar,APMC Karjat,Onion,Local,Local,2000.0,2000.0,2000.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Nashik,APMC Manmad,Onion,Unhali,Local,1730.0,4540.0,4300.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Nashik,APMC Pimpalgaon Baswant,Pomegranate,Other,Local,250.0,11500.0,8750.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Pune,APMC Pune,Onion,Local,Local,1000.0,4800.0,2900.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Nashik,APMC Sinner,Onion,Unhali,Local,1500.0,4713.0,4500.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Satara,APMC Vaduj,Onion,Local,Local,4000.0,5500.0,5000.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Sangli,APMC Vita,Onion,Other,Local,3500.0,5000.0,4500.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Nashik,Lasalgaon(Vinchur),Onion,Unhali,Local,1200.0,5000.0,4400.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Mumbai,Mumbai-Onion & Potato Market,Onion,Other,Local,3300.0,4500.0,3900.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Pune,Pune(Khadiki),Onion,Local,Local,1000.0,1600.0,1300.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Pune,Pune(Moshi),Onion,Local,Local,2000.0,4500.0,3250.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Pune,Pune(Pimpri),Onion,Local,Local,2500.0,4200.0,3350.0,2026-09-03T14:14:47+05:30
+2026-09-03,Maharashtra,Sangli,"Sangli(Phale, Bhajipala Market)",Onion,Local,Local,1800.0,5500.0,3650.0,2026-09-03T14:14:47+05:30
