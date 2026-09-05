@@ -1297,3 +1297,19 @@ arrival_date,state,district,market,commodity,variety,grade,min_price,max_price,m
 2026-09-04,Maharashtra,Pune,Pune(Manjri),Onion,Local,Local,2000.0,4000.0,3000.0,2026-09-04T19:35:44+05:30
 2026-09-04,Maharashtra,Pune,Pune(Moshi),Onion,Local,Local,2500.0,4500.0,3500.0,2026-09-04T19:35:44+05:30
 2026-09-04,Maharashtra,Pune,Pune(Pimpri),Onion,Local,Local,2000.0,4000.0,3000.0,2026-09-04T19:35:44+05:30
+2026-09-05,Maharashtra,Nashik,APMC Ghoti,Brinjal,Other,Local,2000.0,2000.0,2000.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Ghoti,Cabbage,Other,Local,900.0,1000.0,950.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Ghoti,Cauliflower,Other,Local,1600.0,1800.0,1700.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Ghoti,Chilly Capsicum,Other,Local,2000.0,2000.0,2000.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Ghoti,Cucumbar(Kheera),Other,Local,1600.0,1800.0,1700.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Ghoti,Tomato,Other,Local,1900.0,1900.0,1900.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Manmad,Onion,Unhali,Local,1000.0,4620.0,4400.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nagpur,APMC Nagpur,Onion,Red,Local,4000.0,5000.0,4750.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nagpur,APMC Nagpur,Onion,White,Local,4500.0,5500.0,5250.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Pimpalgaon Baswant,Onion,Unhali,Local,2000.0,5858.0,4600.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,APMC Pimpalgaon Baswant,Pomegranate,Other,Local,250.0,12000.0,8500.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Satara,APMC Vaduj,Onion,Local,Local,4000.0,5700.0,5000.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Nashik,Lasalgaon(Vinchur),Onion,Unhali,Local,1200.0,4952.0,4500.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Pune,Pune(Moshi),Onion,Local,Local,2500.0,4500.0,3500.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Pune,Pune(Pimpri),Onion,Local,Local,2500.0,4000.0,3250.0,2026-09-05T13:42:15+05:30
+2026-09-05,Maharashtra,Sangli,"Sangli(Phale, Bhajipala Market)",Onion,Local,Local,1800.0,5000.0,3400.0,2026-09-05T13:42:15+05:30
