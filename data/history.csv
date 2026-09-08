@@ -1451,24 +1451,94 @@ arrival_date,state,district,market,commodity,variety,grade,min_price,max_price,m
 2026-09-07,Maharashtra,Ahilyanagar,Rahuri(Vambori),Onion,Unhali,Local,500.0,5200.0,3900.0,2026-09-07T21:07:53+05:30
 2026-09-07,Maharashtra,Sangli,"Sangli(Phale, Bhajipala Market)",Onion,Local,Local,1800.0,5100.0,3450.0,2026-09-07T21:07:53+05:30
 2026-09-07,Maharashtra,Ahilyanagar,"Shree Sairaj Krushi Market, Dist Ahilyanagar",Onion,Local,Local,1000.0,5100.0,3100.0,2026-09-07T21:07:53+05:30
-2026-09-08,Maharashtra,Jalgaon,APMC Bhusaval,Onion,Unhali,Local,3500.0,4000.0,4000.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Chandwad,Onion,Unhali,Local,1500.0,5295.0,4450.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Ghoti,Brinjal,Other,Local,2000.0,2000.0,2000.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Ghoti,Cabbage,Other,Local,900.0,1000.0,950.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Ghoti,Cauliflower,Other,Local,1600.0,1600.0,1600.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Ghoti,Chilly Capsicum,Other,Local,1800.0,2000.0,1900.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Ghoti,Cucumbar(Kheera),Other,Local,1400.0,1600.0,1500.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,APMC Ghoti,Tomato,Other,Local,1800.0,2000.0,1900.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Satara,APMC Karad,Onion,Halva,Local,1500.0,5000.0,5000.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nagpur,APMC Nagpur,Onion,Red,Local,4000.0,5000.0,4750.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nagpur,APMC Nagpur,Onion,White,Local,4500.0,5500.0,5250.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Pune,APMC Pune,Onion,Local,Local,1000.0,5000.0,3000.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Satara,APMC Vaduj,Onion,Local,Local,4000.0,4700.0,4500.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Satara,APMC Vai,Onion,Local,Local,2000.0,4000.0,3000.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,Lasalgaon(Niphad),Onion,Unhali,Local,1200.0,4810.0,4600.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,Lasalgaon(Vinchur),Onion,Unhali,Local,1200.0,5000.0,4450.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Mumbai,Mumbai-Onion & Potato Market,Onion,Other,Local,3600.0,4800.0,4200.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Nashik,Pimpalgaon Baswant(Saykheda),Onion,Unhali,Local,2225.0,4555.0,4000.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Pune,Pune(Khadiki),Onion,Local,Local,1000.0,1700.0,1350.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Pune,Pune(Moshi),Onion,Local,Local,2500.0,4000.0,3250.0,2026-09-08T14:14:11+05:30
-2026-09-08,Maharashtra,Pune,Pune(Pimpri),Onion,Local,Local,2500.0,3500.0,3000.0,2026-09-08T14:14:11+05:30
+2026-09-08,Maharashtra,Akola,APMC Akola,Onion,Other,Local,2000.0,5200.0,3500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Jalgaon,APMC Bhusaval,Onion,Unhali,Local,3500.0,4000.0,4000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Chandwad,Onion,Unhali,Local,1500.0,5295.0,4450.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Chattrapati Sambhajinagar,APMC Chattrapati Sambhajinagar,Onion,Other,Local,2300.0,5000.0,3650.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Dindori,Onion,Unhali,Local,4000.0,5422.0,4400.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Ghoti,Brinjal,Other,Local,2000.0,2000.0,2000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Ghoti,Cabbage,Other,Local,900.0,1000.0,950.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Ghoti,Cauliflower,Other,Local,1600.0,1600.0,1600.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Ghoti,Chilly Capsicum,Other,Local,1800.0,2000.0,1900.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Ghoti,Cucumbar(Kheera),Other,Local,1400.0,1600.0,1500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Ghoti,Tomato,Other,Local,1800.0,2000.0,1900.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nagpur,APMC Hingna,Onion,Red,Local,5000.0,5000.0,5000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Pune,APMC Indapur,Onion,Red,Local,1500.0,5500.0,2200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Jalgaon,APMC Jalgaon,Onion,Red,Local,1650.0,4500.0,3075.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Kalvan,Onion,Unhali,Local,2200.0,5475.0,4601.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Satara,APMC Karad,Onion,Halva,Local,1500.0,5000.0,5000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Pune,APMC Khed,Onion,Fursungi,Local,2000.0,4500.0,3500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Kolhapur,APMC Kolhapur,Onion,Other,Local,1200.0,5000.0,3000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Ahilyanagar,APMC Kopargaon,Onion,Unhali,Local,1000.0,4774.0,4200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Bajra(Pearl Millet/Cumbu),Other,Non-FAQ,2201.0,2773.0,2556.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Bengal Gram(Gram)(Whole),Other,Non-FAQ,5100.0,5870.0,5570.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Green Gram(Moong)(Whole),Green (Whole),FAQ,8769.0,11401.0,9651.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Groundnut,Other,Non-FAQ,4300.0,5500.0,5300.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Maize,Yellow,Non-FAQ,1701.0,2399.0,2350.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Red gram/Arhar/Tur(whole),Other,Non-FAQ,7099.0,7099.0,7099.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Malegaon,Wheat,Other,Non-FAQ,2270.0,2580.0,2578.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Buldhana,APMC Malkapur,Onion,Local,Local,1300.0,4725.0,3600.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Manmad,Green Gram(Moong)(Whole),Green (Whole),FAQ,8768.0,13000.0,11500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nagpur,APMC Nagpur,Onion,Red,Local,4000.0,5000.0,4750.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nagpur,APMC Nagpur,Onion,White,Local,4500.0,5500.0,5250.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nampur,Onion,Unhali,Local,500.0,5200.0,4400.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nandgaon,Bajra(Pearl Millet/Cumbu),Other,Non-FAQ,2200.0,2601.0,2350.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Apple,Other,Local,7000.0,20000.0,14000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Banana,Khandesh,Local,700.0,1700.0,1400.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Bhindi(Ladies Finger),Other,Local,1666.0,3333.0,2500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Bitter gourd,Other,Local,1670.0,2920.0,1920.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Bottle gourd,Other,Local,645.0,1335.0,1000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Cabbage,Other,Local,500.0,1170.0,835.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Cauliflower,Other,Local,500.0,1570.0,1070.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Chilly Capsicum,Other,Local,1875.0,3125.0,2500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Cucumbar(Kheera),Other,Local,1500.0,3000.0,2250.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Garlic,Other,Local,7000.0,26200.0,18500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Guar,Other,Local,4000.0,6000.0,5000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Guava,Other,Local,3000.0,6000.0,4500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Lime,Other,Local,6000.0,8000.0,7000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Mousambi(Sweet Lime),Other,Local,1500.0,3000.0,3000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Onion,Unhali,Local,2200.0,4851.0,4200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Papaya,Other,Local,1000.0,3500.0,2000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Pomegranate,Other,Local,300.0,9500.0,6100.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Potato,Other,Local,750.0,1350.0,900.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Ridgeguard(Tori),Other,Local,1670.0,3335.0,2505.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Sweet Pumpkin,Other,Local,1000.0,1400.0,1200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Nasik,Tender Coconut,Other,Local,4000.0,6000.0,4500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Pimpalgaon Baswant,Onion,Unhali,Local,1700.0,6470.0,4725.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Pimpalgaon Baswant,Pomegranate,Other,Local,250.0,11500.0,9000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Pune,APMC Pune,Onion,Local,Local,1000.0,5000.0,3000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Ahilyanagar,APMC Rahata,Onion,Other,Local,700.0,6000.0,3800.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Dhule,APMC Sakri,Onion,Unhali,Local,3800.0,5000.0,4400.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Ahilyanagar,APMC Sangamner,Onion,Unhali,Local,1500.0,4951.0,3325.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Bajra(Pearl Millet/Cumbu),Other,Non-FAQ,2191.0,2716.0,2450.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Bengal Gram(Gram)(Whole),Other,Non-FAQ,4600.0,5831.0,5300.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Maize,Other,Non-FAQ,2110.0,2110.0,2110.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Maize,Other,FAQ,2515.0,2515.0,2515.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Onion,Unhali,Local,905.0,5435.0,4470.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Wheat,Other,FAQ,2650.0,3000.0,2838.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Satana,Wheat,Other,Non-FAQ,2470.0,2470.0,2470.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Satara,APMC Satara,Onion,Other,Local,1500.0,4500.0,3000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Sinner,Groundnut,Other,Non-FAQ,4400.0,4400.0,4400.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Sinner,Onion,Unhali,Local,1300.0,4721.0,4450.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Sinner,Soyabean,Other,Local,5625.0,5755.0,5700.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Sinner,Wheat,Other,FAQ,2715.0,2785.0,2750.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Solapur,APMC Solapur,Onion,Red,Local,500.0,6000.0,3300.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,APMC Umrane,Onion,Unhali,Local,1500.0,5253.0,4500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Satara,APMC Vaduj,Onion,Local,Local,4000.0,4700.0,4500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Satara,APMC Vai,Onion,Local,Local,2000.0,4000.0,3000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Amarawati,Amrawati(Frui & Veg. Market),Onion,Local,Local,2600.0,5200.0,3900.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Chandrapur,Chandrapur(Ganjwad),Onion,Other,Local,4500.0,5700.0,5200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Niphad),Maize,Deshi Red,FAQ,2510.0,2521.0,2511.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Niphad),Onion,Unhali,Local,1200.0,4810.0,4600.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Niphad),Soyabean,Other,Local,5551.0,6025.0,6001.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Niphad),Wheat,Maharashtra 2189,FAQ,2722.0,2781.0,2729.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Vinchur),Green Gram(Moong)(Whole),Other,FAQ,8900.0,12000.0,11500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Vinchur),Onion,Unhali,Local,1200.0,5000.0,4500.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Lasalgaon(Vinchur),Soyabean,Other,Local,3000.0,6026.0,6000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Mumbai,Mumbai-Onion & Potato Market,Onion,Other,Local,3600.0,4800.0,4200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Ahilyanagar,"Omchatinya Multi State Agro Purpose Co-Op Society, Dist Ahilyanagar",Onion,Other,Local,1000.0,5500.0,4200.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,"Perfect Krishi Market Yard Pvt Ltd, Dist Nashik",Pomegranate,Other,Local,1300.0,12600.0,8400.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Nashik,Pimpalgaon Baswant(Saykheda),Onion,Unhali,Local,2225.0,4555.0,4000.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Pune,Pune(Khadiki),Onion,Local,Local,1000.0,1700.0,1350.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Pune,Pune(Moshi),Onion,Local,Local,2500.0,4000.0,3250.0,2026-09-08T19:45:38+05:30
+2026-09-08,Maharashtra,Pune,Pune(Pimpri),Onion,Local,Local,2500.0,3500.0,3000.0,2026-09-08T19:45:38+05:30
