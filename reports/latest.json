@@ -1,200 +1,32 @@
 {
-  "date": "2026-09-09",
+  "date": "2026-09-10",
   "date_display": {
-    "en": "9 Sep 2026",
-    "mr": "9 सप्टेंबर 2026"
+    "en": "10 Sep 2026",
+    "mr": "10 सप्टेंबर 2026"
   },
-  "generated_at": "2026-09-09T19:46:12+05:30",
+  "generated_at": "2026-09-10T19:39:41+05:30",
   "headline": {
-    "market": "Lasalgaon(Niphad)",
-    "date": "2026-09-09",
-    "modal": 4350,
-    "min": 1500,
-    "max": 4590,
-    "trading_days": 6,
+    "market": "APMC Nasik",
+    "date": "2026-09-10",
+    "modal": 4100,
+    "min": 2050,
+    "max": 4601,
+    "trading_days": 7,
     "pct_7d": null,
     "pct_30d": null,
     "status": "BASELINE",
     "baseline_since": "2026-09-03",
-    "verdict_en": "Onion at Lasalgaon(Niphad): ₹4,350/quintal today. Building the price baseline since 3 Sep 2026 — trend alerts start after 7 market days.",
-    "verdict_mr": "लासलगाव (निफाड) येथे आज कांदा ₹4,350 प्रति क्विंटल. 3 सप्टेंबर 2026 पासून भावाची नोंद सुरू आहे — 7 बाजार दिवसांनंतर वाढ-घट दिसू लागेल."
+    "verdict_en": "Onion at APMC Nasik: ₹4,100/quintal today. Building the price baseline since 3 Sep 2026 — trend alerts start after 7 market days.",
+    "verdict_mr": "APMC Nasik येथे आज कांदा ₹4,100 प्रति क्विंटल. 3 सप्टेंबर 2026 पासून भावाची नोंद सुरू आहे — 7 बाजार दिवसांनंतर वाढ-घट दिसू लागेल."
   },
   "onion_markets": [
     {
-      "market": "APMC Chandwad",
-      "date": "2026-09-09",
-      "modal": 4380,
-      "min": 1590,
-      "max": 5180,
-      "trading_days": 6,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Devala",
-      "date": "2026-09-09",
-      "modal": 4380,
-      "min": 1000,
-      "max": 4775,
-      "trading_days": 4,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Kalvan",
-      "date": "2026-09-09",
-      "modal": 4200,
-      "min": 1000,
-      "max": 5700,
-      "trading_days": 5,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Lasalgaon",
-      "date": "2026-09-09",
-      "modal": 4500,
-      "min": 1100,
-      "max": 5100,
-      "trading_days": 3,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Manmad",
-      "date": "2026-09-09",
-      "modal": 4200,
-      "min": 1200,
-      "max": 4500,
-      "trading_days": 5,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Nampur",
-      "date": "2026-09-09",
-      "modal": 4100,
-      "min": 605,
-      "max": 4750,
-      "trading_days": 4,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
       "market": "APMC Nasik",
-      "date": "2026-09-09",
-      "modal": 4150,
-      "min": 2050,
-      "max": 4700,
-      "trading_days": 6,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Pimpalgaon Baswant",
-      "date": "2026-09-09",
-      "modal": 4700,
-      "min": 1700,
-      "max": 6800,
-      "trading_days": 6,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Satana",
-      "date": "2026-09-09",
-      "modal": 4275,
-      "min": 600,
-      "max": 5305,
-      "trading_days": 4,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Sinner",
-      "date": "2026-09-09",
-      "modal": 4200,
-      "min": 1300,
-      "max": 5000,
-      "trading_days": 5,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Umrane",
-      "date": "2026-09-09",
+      "date": "2026-09-10",
       "modal": 4100,
-      "min": 1500,
-      "max": 5460,
-      "trading_days": 4,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "APMC Yeola",
-      "date": "2026-09-09",
-      "modal": 4275,
-      "min": 701,
-      "max": 4750,
-      "trading_days": 4,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "Lasalgaon(Niphad)",
-      "date": "2026-09-09",
-      "modal": 4350,
-      "min": 1500,
-      "max": 4590,
-      "trading_days": 6,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "Lasalgaon(Vinchur)",
-      "date": "2026-09-09",
-      "modal": 4400,
-      "min": 1200,
-      "max": 4970,
-      "trading_days": 6,
-      "pct_7d": null,
-      "pct_30d": null,
-      "status": "BASELINE",
-      "baseline_since": "2026-09-03"
-    },
-    {
-      "market": "Pimpalgaon Baswant(Saykheda)",
-      "date": "2026-09-09",
-      "modal": 3850,
-      "min": 2150,
+      "min": 2050,
       "max": 4601,
-      "trading_days": 5,
+      "trading_days": 7,
       "pct_7d": null,
       "pct_30d": null,
       "status": "BASELINE",
@@ -205,64 +37,64 @@
     {
       "market": "APMC Nasik",
       "commodity": "Cucumbar(Kheera)",
-      "modal": 1100,
-      "prev_modal": 2250,
-      "pct_vs_prev_day": -51.1
-    },
-    {
-      "market": "APMC Malegaon",
-      "commodity": "Groundnut",
-      "modal": 7900,
-      "prev_modal": 5300,
-      "pct_vs_prev_day": 49.1
-    },
-    {
-      "market": "APMC Malegaon",
-      "commodity": "Red gram/Arhar/Tur(whole)",
-      "modal": 3700,
-      "prev_modal": 7099,
-      "pct_vs_prev_day": -47.9
+      "modal": 1760,
+      "prev_modal": 1100,
+      "pct_vs_prev_day": 60.0
     },
     {
       "market": "APMC Nasik",
-      "commodity": "Bhindi(Ladies Finger)",
-      "modal": 1666,
-      "prev_modal": 2500,
-      "pct_vs_prev_day": -33.4
+      "commodity": "Chilly Capsicum",
+      "modal": 3210,
+      "prev_modal": 2200,
+      "pct_vs_prev_day": 45.9
     },
     {
       "market": "APMC Nasik",
-      "commodity": "Mousambi(Sweet Lime)",
-      "modal": 2000,
-      "prev_modal": 3000,
-      "pct_vs_prev_day": -33.3
+      "commodity": "Cabbage",
+      "modal": 583,
+      "prev_modal": 835,
+      "pct_vs_prev_day": -30.2
+    },
+    {
+      "market": "APMC Nasik",
+      "commodity": "Bitter gourd",
+      "modal": 1710,
+      "prev_modal": 1450,
+      "pct_vs_prev_day": 17.9
+    },
+    {
+      "market": "APMC Nasik",
+      "commodity": "Cauliflower",
+      "modal": 1000,
+      "prev_modal": 860,
+      "pct_vs_prev_day": 16.3
     }
   ],
   "key_commodities": [
     {
-      "commodity": "Wheat",
-      "market": "APMC Devala",
-      "modal": 2855,
+      "commodity": "Pomegranate",
+      "market": "Perfect Krishi Market Yard Pvt Ltd, Dist Nashik",
+      "modal": 8400,
       "pct_vs_prev_day": null
     },
     {
-      "commodity": "Maize",
-      "market": "Lasalgaon(Niphad)",
-      "modal": 2535,
-      "pct_vs_prev_day": null
+      "commodity": "Cabbage",
+      "market": "APMC Nasik",
+      "modal": 583,
+      "pct_vs_prev_day": -30.2
     },
     {
-      "commodity": "Bajra(Pearl Millet/Cumbu)",
-      "market": "APMC Devala",
-      "modal": 2950,
-      "pct_vs_prev_day": null
+      "commodity": "Cauliflower",
+      "market": "APMC Nasik",
+      "modal": 1000,
+      "pct_vs_prev_day": 16.3
     }
   ],
   "top_movers_note": null,
   "mh_onion_comparison": {
-    "nashik_median_modal": 4275,
-    "maharashtra_median_modal": 4100,
-    "maharashtra_markets_reporting": 42
+    "nashik_median_modal": 4100,
+    "maharashtra_median_modal": 3850,
+    "maharashtra_markets_reporting": 27
   },
   "source": "AGMARKNET via data.gov.in"
 }
