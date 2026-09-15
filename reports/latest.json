@@ -4,7 +4,7 @@
     "en": "15 Sep 2026",
     "mr": "15 सप्टेंबर 2026"
   },
-  "generated_at": "2026-09-15T14:47:54+05:30",
+  "generated_at": "2026-09-15T20:14:03+05:30",
   "headline": {
     "market": "Lasalgaon(Vinchur)",
     "date": "2026-09-15",
@@ -20,6 +20,65 @@
   },
   "onion_markets": [
     {
+      "market": "APMC Devala",
+      "date": "2026-09-15",
+      "modal": 4380,
+      "min": 1000,
+      "max": 4865,
+      "trading_days": 6,
+      "pct_7d": null,
+      "pct_30d": null,
+      "status": "BASELINE",
+      "baseline_since": "2026-09-03"
+    },
+    {
+      "market": "APMC Dindori",
+      "date": "2026-09-15",
+      "modal": 3900,
+      "min": 3300,
+      "max": 4700,
+      "trading_days": 4,
+      "pct_7d": null,
+      "pct_30d": null,
+      "status": "BASELINE",
+      "baseline_since": "2026-09-03"
+    },
+    {
+      "market": "APMC Kalvan",
+      "date": "2026-09-15",
+      "modal": 4450,
+      "min": 2000,
+      "max": 5500,
+      "trading_days": 7,
+      "pct_7d": null,
+      "pct_30d": null,
+      "status": "BASELINE",
+      "baseline_since": "2026-09-03"
+    },
+    {
+      "market": "APMC Nasik",
+      "date": "2026-09-15",
+      "modal": 4300,
+      "min": 2200,
+      "max": 4800,
+      "trading_days": 10,
+      "pct_7d": 1.0,
+      "pct_30d": null,
+      "status": "STEADY"
+    },
+    {
+      "market": "Dindori(Vani)",
+      "date": "2026-09-15",
+      "modal": 4501,
+      "min": 4051,
+      "max": 5061,
+      "trading_days": 4,
+      "pct_7d": null,
+      "pct_30d": null,
+      "status": "BASELINE",
+      "baseline_since": "2026-09-03"
+    },
+    {
       "market": "Lasalgaon(Vinchur)",
       "date": "2026-09-15",
       "modal": 4300,
@@ -33,39 +92,39 @@
   ],
   "top_movers": [
     {
-      "market": "APMC Ghoti",
-      "commodity": "Cauliflower",
-      "modal": 1900,
-      "prev_modal": 1700,
-      "pct_vs_prev_day": 11.8
+      "market": "APMC Nasik",
+      "commodity": "Cabbage",
+      "modal": 960,
+      "prev_modal": 585,
+      "pct_vs_prev_day": 64.1
     },
     {
-      "market": "APMC Ghoti",
-      "commodity": "Cucumbar(Kheera)",
-      "modal": 1500,
-      "prev_modal": 1700,
-      "pct_vs_prev_day": -11.8
+      "market": "APMC Nasik",
+      "commodity": "Bottle gourd",
+      "modal": 1070,
+      "prev_modal": 835,
+      "pct_vs_prev_day": 28.1
     },
     {
-      "market": "APMC Pimpalgaon Baswant",
-      "commodity": "Pomegranate",
-      "modal": 9750,
-      "prev_modal": 9000,
-      "pct_vs_prev_day": 8.3
+      "market": "APMC Nasik",
+      "commodity": "Guar",
+      "modal": 3000,
+      "prev_modal": 4000,
+      "pct_vs_prev_day": -25.0
     },
     {
-      "market": "APMC Ghoti",
-      "commodity": "Chilly Capsicum",
-      "modal": 2000,
-      "prev_modal": 1900,
-      "pct_vs_prev_day": 5.3
-    },
-    {
-      "market": "APMC Ghoti",
-      "commodity": "Brinjal",
-      "modal": 1900,
+      "market": "APMC Nasik",
+      "commodity": "Papaya",
+      "modal": 2500,
       "prev_modal": 2000,
-      "pct_vs_prev_day": -5.0
+      "pct_vs_prev_day": 25.0
+    },
+    {
+      "market": "Premium Krushi Utpanna Bazar, Nashik",
+      "commodity": "Pomegranate",
+      "modal": 5720,
+      "prev_modal": 4700,
+      "pct_vs_prev_day": 21.7
     }
   ],
   "key_commodities": [
@@ -76,23 +135,23 @@
       "pct_vs_prev_day": null
     },
     {
-      "commodity": "Pomegranate",
-      "market": "APMC Pimpalgaon Baswant",
-      "modal": 9750,
-      "pct_vs_prev_day": 8.3
+      "commodity": "Wheat",
+      "market": "APMC Lasalgaon",
+      "modal": 2759,
+      "pct_vs_prev_day": null
     },
     {
-      "commodity": "Cabbage",
-      "market": "APMC Ghoti",
-      "modal": 950,
+      "commodity": "Maize",
+      "market": "APMC Lasalgaon",
+      "modal": 2525,
       "pct_vs_prev_day": null
     }
   ],
   "top_movers_note": null,
   "mh_onion_comparison": {
-    "nashik_median_modal": 4300,
+    "nashik_median_modal": 4340,
     "maharashtra_median_modal": 4000,
-    "maharashtra_markets_reporting": 10
+    "maharashtra_markets_reporting": 34
   },
   "source": "AGMARKNET via data.gov.in"
 }
